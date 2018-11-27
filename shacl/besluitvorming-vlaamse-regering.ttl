@@ -1,0 +1,773 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#ZittingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluit#Zitting> ;
+	sh:property [
+		sh:name "behandelt" ;
+		sh:description "Duidt aan dat een formeel vastgelegd agendapunt tijdens een zitting wordt besproken." ;
+		sh:path <https://data.vlaanderen.be/ns/besluit#behandelt> ;
+		sh:class <https://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie/#Agendapunt> ;
+	] ;
+	sh:property [
+		sh:name "eind" ;
+		sh:description "Het tijdstip waarop een zitting eindigt." ;
+		sh:path <http://www.w3.org/ns/prov#endedAtTime> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "geplandeStart" ;
+		sh:description "Het tijdstip waarop een zitting gepland is om te beginnen." ;
+		sh:path <https://data.vlaanderen.be/ns/generiek#geplandeStart> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "locatie" ;
+		sh:description "De locatie waar een zitting plaatsvindt. Doorgaans is dit een zaal in een gebouw." ;
+		sh:path <http://www.w3.org/ns/prov#Location> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "nummer" ;
+		sh:description "Het nummer dat een ministerraad identificeert." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#nummer> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "start" ;
+		sh:description "Het tijdstip waarop een zitting is begonnen." ;
+		sh:path <http://www.w3.org/ns/prov#startedAtTime> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#PublicatiestatusShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Publicatiestatus> ;
+	sh:property [
+		sh:name "datum" ;
+		sh:description "De datum waarop een publicatiestatus is toegekend." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datum> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "status" ;
+		sh:description "De status van een publicatie." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#status> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#BeslissingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Beslissing> ;
+	sh:property [
+		sh:name "isGerealiseerdDoor" ;
+		sh:description "Duidt aan dat een beslissing gerealiseerd wordt via een publicatie." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#isGerealiseerdDoor> ;
+		sh:class <http://data.europa.eu/eli/ontology#LegalExpression> ;
+	] ;
+	sh:property [
+		sh:name "goedgekeurd" ;
+		sh:description "De indicator die aangeeft of een beslissing is goedgekeurd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#goedgekeurd> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "tekst" ;
+		sh:description "De tekstuele inhoud van een beslissing." ;
+		sh:path <http://www.w3.org/ns/prov#value> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#HoedanigheidShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/organisatie#Hoedanigheid> ;
+	sh:property [
+		sh:name "creëert" ;
+		sh:description "Duidt aan dat een dossier door een hoedanigheid wordt aangemaakt." ;
+		sh:path <http://www.w3.org/ns/prov#generated> ;
+		sh:class <http://dbpedia.org/ontology/Case> ;
+	] ;
+	sh:property [
+		sh:name "dientIn" ;
+		sh:description "Duidt aan dat een hoedanigheid een dossier indient." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#dientIn> ;
+		sh:class <http://dbpedia.org/ontology/Case> ;
+	] ;
+	sh:property [
+		sh:name "isBevoegdVoor" ;
+		sh:description "Duidt aan dat één of meer hoedanigheden bevoegd zijn voor een dossier. " ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#isBevoegdVoor> ;
+		sh:class <http://dbpedia.org/ontology/Case> ;
+	] ;
+	sh:property [
+		sh:name "isContactpersoonVoor" ;
+		sh:description "Duidt aan dat een hoedanigheid een contacpersoon is voor een dossier." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#isContactpersoonVoor> ;
+		sh:class <http://dbpedia.org/ontology/Case> ;
+	] ;
+	sh:property [
+		sh:name "beleidsdomein" ;
+		sh:description "Het beleidsdomein dat toegewezen is aan een minister." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#beleidsdomein> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "bevoegdheid" ;
+		sh:description "De bevoegdheid van een minister." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#bevoegdheid> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "contactinfo" ;
+		sh:description "Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren." ;
+		sh:path <https://data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/#Contactinfo> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#PublicatieShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://data.europa.eu/eli/ontology#LegalExpression> ;
+	sh:property [
+		sh:name "bevat" ;
+		sh:description "Duidt aan dat bepaalde objecten onderdeel kunnen uitmaken van een groter geheel." ;
+		sh:path <http://purl.org/dc/terms/hasPart> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+	] ;
+	sh:property [
+		sh:name "heeftStatus" ;
+		sh:description "Duidt aan dat een publicatie een status heeft, zoals "drukproef aangevraagd"." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#heeftStatus> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Publicatiestatus> ;
+	] ;
+	sh:property [
+		sh:name "aantalWoorden" ;
+		sh:description "Het aantal woorden waaruit een publicatietekst bestaat." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#aantalWoorden> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "aanvraagTimestamp" ;
+		sh:description "De datum waarop een publicatie is aangevraagd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#aanvraagTimestamp> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "digitaal" ;
+		sh:description "De indicator die aangeeft of een publicatie digitaal is ingediend." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#digitaal> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Een opmerking horende bij een publicatie." ;
+		sh:path <https://www.w3.org/2000/01/rdf-schema#comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opschrift" ;
+		sh:description "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen." ;
+		sh:path <http://data.europa.eu/eli/ontology#title_short> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "type" ;
+		sh:description "Het type van een publicatie." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "wijze" ;
+		sh:description "De wijze waarop er wordt gepubliceerd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#wijze> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#KortBestekShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#KortBestek> ;
+	sh:property [
+		sh:name "ondertitel" ;
+		sh:description "De ondertitel van een kortbestek." ;
+		sh:path <http://dbpedia.org/ontology/subtitle> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "publicatieTimestamp" ;
+		sh:description "De datum waarop een kortbestek is gepubliceerd." ;
+		sh:path <http://purl.org/dc/terms/issued> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "tekst" ;
+		sh:description "De tekstuele inhoud van een kortbestek." ;
+		sh:path <http://www.w3.org/ns/prov#value> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "thema" ;
+		sh:description "Het thema van een kortbestek." ;
+		sh:path <http://purl.org/dc/terms/subject> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+	] ;
+	sh:property [
+		sh:name "titel" ;
+		sh:description "De titel van een kortbestek." ;
+		sh:path <http://purl.org/dc/terms/title> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#DocumentversieShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+	sh:property [
+		sh:name "isGeüploadDoor" ;
+		sh:description "Duidt aan dat een document(versie) door een hoedanigheid is geüpload." ;
+		sh:path <http://purl.org/dc/terms/creator> ;
+		sh:class <https://data.vlaanderen.be/ns/organisatie#Hoedanigheid> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "formaat" ;
+		sh:description "Het formaat waarin een documentversie is opgeslagen." ;
+		sh:path <http://purl.org/dc/terms/format> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "titel" ;
+		sh:description "De naam van een documentversie." ;
+		sh:path <http://purl.org/dc/terms/title> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Een opmerking gegeven bij een documentversie." ;
+		sh:path <https://www.w3.org/2000/01/rdf-schema#comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "taal" ;
+		sh:description "De taal van een documentversie." ;
+		sh:path <http://purl.org/dc/terms/language> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "uploadTimestamp" ;
+		sh:description "Het tijdstip waarop een documentversie is geüpload." ;
+		sh:path <http://purl.org/dc/terms/created> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "versie" ;
+		sh:description "De identificator van een specifieke versie van een document." ;
+		sh:path <https://data.vlaanderen.be/ns/generiek#versieIdentificator> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#VolgordeShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Volgorde> ;
+	sh:property [
+		sh:name "bevat" ;
+		sh:description "Verwijst naar het deeldossier waarop deze volgorde betrekking heeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#deeldossier> ;
+		sh:class <http://dbpedia.org/ontology/UnitOfWork> ;
+	] ;
+	sh:property [
+		sh:name "bevat" ;
+		sh:description "Verwijst naar de documentversie waarop deze volgorde betrekking heeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#documentversie> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+	] ;
+	sh:property [
+		sh:name "rangnummer" ;
+		sh:description "Een nummer dat de volgorde van een document in een deeldossier aangeeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#rangnummer> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#AdviesShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Advies> ;
+	sh:property [
+		sh:name "advies" ;
+		sh:description "De tekstuele inhoud van een advies." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#advies> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "adviesaanvraag" ;
+		sh:description "De tekstuele inhoud van een adviesaanvraag." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#adviesaanvraag> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "adviesorgaan" ;
+		sh:description "Het orgaan dat instaat voor het verstrekken van het advies." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#adviesorgaan> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumAanvraag" ;
+		sh:description "De datum waarop het advies werd aangevraagd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumAanvraag> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumOntvangst" ;
+		sh:description "De datum waarop het advies werd ontvangen." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumOntvangst> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#PublicatieBelgischStaatsbladShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#PublicatieBelgischStaatsblad> ;
+	sh:property [
+		sh:name "NUMAC" ;
+		sh:description "Het werknummer van de publicatie zoals het door het Belgisch Staatsblad is toegekend." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#NUMAC> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#VertalingsaanvraagShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag> ;
+	sh:property [
+		sh:name "leidtTot" ;
+		sh:description "Duidt aan dat een object als gevolg van een ander object aangemaakt kan worden." ;
+		sh:path <http://www.w3.org/ns/prov#generated> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumAanvraag" ;
+		sh:description "De datum waarop een vertaling is aangevraagd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumAanvraag> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumOpleveringFeitelijk" ;
+		sh:description "De datum waarop een vertaling is ontvangen." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumOpleveringFeitelijk> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumOpleveringVerwacht" ;
+		sh:description "De datum waarop men verwacht een vertaling (ten laatste) te ontvangen." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumOpleveringVerwacht> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#AgendapuntShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie/#Agendapunt> ;
+	sh:property [
+		sh:name "leidtTot" ;
+		sh:description "Duidt aan dat een object als gevolg van een ander object aangemaakt kan worden." ;
+		sh:path <http://www.w3.org/ns/prov#generated> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#KortBestek> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "leidtTot" ;
+		sh:description "Duidt aan dat een object als gevolg van een ander object aangemaakt kan worden." ;
+		sh:path <http://www.w3.org/ns/prov#generated> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Beslissing> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "aangebrachtNa" ;
+		sh:description "Duidt aan dat een agendapunt wordt besproken na een vorig agendapunt." ;
+		sh:path <https://data.vlaanderen.be/ns/besluit#aangebrachtNa> ;
+		sh:class <https://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie/#Agendapunt> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "aangemaakt" ;
+		sh:description "De datum waarop een agendapunt werd toegevoegd." ;
+		sh:path <http://purl.org/dc/terms/created> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumUitgesteld" ;
+		sh:description "De datum naar waar een agendapunt werd uitgesteld." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumUitgesteld> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "formeelOK" ;
+		sh:description "Een indicator die aangeeft of een agendapunt formeel goedgekeurd is." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#formeelOK> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "notulen" ;
+		sh:description "De formele notulen van een zitting." ;
+		sh:path <https://data.vlaanderen.be/ns/besluit#heeftNotulen> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Een opmerking gegeven bij een agendapunt." ;
+		sh:path <https://www.w3.org/2000/01/rdf-schema#comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+	] ;
+	sh:property [
+		sh:name "persagenda" ;
+		sh:description "Een indicator die aangeeft of een agendapunt in de persagenda mag verschijnen." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#persagenda> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "vertrouwelijk" ;
+		sh:description "Een indicator die de mate van vertrouwelijkheid van een agendapunt aangeeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#vertrouwelijk> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#DocumentShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://xmlns.com/foaf/0.1/Document> ;
+	sh:property [
+		sh:name "heeftVersie" ;
+		sh:description "Duidt aan dat een document één of meerdere versie kan hebben." ;
+		sh:path <http://purl.org/dc/terms/hasVersion> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:name "actieveOpenbaarheid" ;
+		sh:description "Een indicator die aangeeft of een document voor iedereen zichtbaar is." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "titel" ;
+		sh:description "De naam waarmee een document wordt aangeduid." ;
+		sh:path <http://purl.org/dc/terms/title> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "oorspronkelijkeNaam" ;
+		sh:description "De naam van een document toen het werd geüpload." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#oorspronkelijkeNaam> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "sleutelwoord" ;
+		sh:description "Het onderwerp van een document, of één of meerdere kernwoorden die het document omschrijven." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#sleutelwoord> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+	] ;
+	sh:property [
+		sh:name "stilgezet" ;
+		sh:description "???" ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#stilgezet> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "stuknummer" ;
+		sh:description "Het werknummer zoals het door het Vlaams Parlement wordt toegekend." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#stuknummer> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "type" ;
+		sh:description "De aard van het document, bijvoorbeeld: bijlage, memorie, nota etc." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "vertrouwelijk" ;
+		sh:description "Een indicator die de mate van vertrouwelijkheid van een document aangeeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#vertrouwelijk> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "volgnummer" ;
+		sh:description "Een nummer dat de volgorde van het document in het ??? aangeeft." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#volgnummer> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#DeeldossierShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://dbpedia.org/ontology/UnitOfWork> ;
+	sh:property [
+		sh:name "leidtTot" ;
+		sh:description "Duidt aan dat een object als gevolg van een ander object aangemaakt kan worden." ;
+		sh:path <http://www.w3.org/ns/prov#generated> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Beslissing> ;
+	] ;
+	sh:property [
+		sh:name "isGeagendeerdVia" ;
+		sh:description "Duidt aan dat een deeldossier gebruikt wordt als informatiebron om een agendapunt te bespreken." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#isGeagendeerdVia> ;
+		sh:class <https://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie/#Agendapunt> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "bevat" ;
+		sh:description "Duidt aan dat bepaalde objecten onderdeel kunnen uitmaken van een groter geheel." ;
+		sh:path <http://purl.org/dc/terms/hasPart> ;
+		sh:class <https://data.vlaanderen.be/ns/besluitvorming#Advies> ;
+	] ;
+	sh:property [
+		sh:name "behandelingsstatus" ;
+		sh:description "De status waarin een deeldossier zich bevindt." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#behandelingsstatus> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumAangevraagdVoorMR" ;
+		sh:description "De datum van de ministerraad waarop men een deeldossier wil agenderen." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumAangevraagdVoorMR> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumIngeplandVoorMR" ;
+		sh:description "De datum van de ministerraad waarop een deeldossier is ingepland om te bespreken." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumIngeplandVoorMR> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "datumVerdaagdNaarMR" ;
+		sh:description "De datum van de ministerraard naar waar een deeldossier is verdaagd." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#datumVerdaagdNaarMR> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#date> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "korteTitel" ;
+		sh:description "De verkorte titel van een deeldossier." ;
+		sh:path <http://purl.org/dc/terms/alternative> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Een opmerking gegeven bij een deeldossier." ;
+		sh:path <https://www.w3.org/2000/01/rdf-schema#comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+	] ;
+	sh:property [
+		sh:name "titel" ;
+		sh:description "De titel van een deeldossier." ;
+		sh:path <http://purl.org/dc/terms/title> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "type" ;
+		sh:description "Het type van een deeldossier." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
+<https://data.vlaanderen.be/shacl/besluitvorming-vlaamse-regering#DossierShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://dbpedia.org/ontology/Case> ;
+	sh:property [
+		sh:name "bestaatUit" ;
+		sh:description "Duidt aan dat een dossier verschillende stappen doorloopt, waarbij een deeldossier een momentopname is van het dossier op dat moment." ;
+		sh:path <http://purl.org/dc/terms/hasPart> ;
+		sh:class <http://dbpedia.org/ontology/UnitOfWork> ;
+	] ;
+	sh:property [
+		sh:name "actieveOpenbaarheid" ;
+		sh:description "De indicator die aangeeft of een dossier voor iedereen zichtbaar is." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "aangemaakt" ;
+		sh:description "De datum waarop een dossier werd aangemaakt." ;
+		sh:path <http://purl.org/dc/terms/created> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#dateTime> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "gearchiveerd" ;
+		sh:description "De indicator die aangeeft of een dossier gearchiveerd is." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#gearchiveerd> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "korteTitel" ;
+		sh:description "De verkorte titel van een dossier." ;
+		sh:path <http://purl.org/dc/terms/alternative> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "nummer" ;
+		sh:description "Het nummer dat een dossier identificeert." ;
+		sh:path <https://data.vlaanderen.be/ns/besluitvorming#nummer> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#integer> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Een opmerking horende bij een dossier." ;
+		sh:path <https://www.w3.org/2000/01/rdf-schema#comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+	] ;
+	sh:property [
+		sh:name "thema" ;
+		sh:description "Het thema van een dossier." ;
+		sh:path <http://purl.org/dc/terms/subject> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+	] ;
+	sh:property [
+		sh:name "titel" ;
+		sh:description "De titel van een dossier." ;
+		sh:path <http://purl.org/dc/terms/title> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "type" ;
+		sh:description "Het type van een dossier." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+
