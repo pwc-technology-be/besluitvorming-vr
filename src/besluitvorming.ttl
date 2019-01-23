@@ -88,7 +88,7 @@ dcterms:title
 
 dcterms:type
       a       rdf:Property ;
-      rdfs:label "type"@nl .
+      rdfs:label "type van procedurestap"@nl , "type"@nl .
 
 rdfs:Resource
       a       rdf:Property ;
@@ -100,11 +100,11 @@ rdfs:comment
 
 skos:Concept
       a       rdfs:Class ;
-      rdfs:label "Documenttype"@nl , "Bevoegdheid"@nl , "Taal"@nl , "Vertrouwelijkheid"@nl , "Publicatietype"@nl , "Beleidsdomein"@nl , "Consultatie-uitkomst"@nl , "Thema"@nl , "Statuswaarde"@nl , "Consultatietype"@nl .
+      rdfs:label "Documenttype"@nl , "Bevoegdheid"@nl , "Taal"@nl , "Vertrouwelijkheid"@nl , "Publicatietype"@nl , "Beleidsdomein"@nl , "Consultatie-uitkomst"@nl , "Thema"@nl , "ProcedurestapType"@nl , "Statuswaarde"@nl , "Consultatietype"@nl .
 
 <http://www.w3.org/ns/adms#identifier>
       a       rdf:Property ;
-      rdfs:label "werknummer van het Belgisch Staatsblad"@nl , "nummer"@nl .
+      rdfs:label "NUMAC"@nl , "nummer"@nl .
 
 <http://www.w3.org/ns/adms#status>
       a       rdf:Property ;
@@ -133,7 +133,7 @@ prov:generated
       a       owl:Class ;
       rdfs:comment "Input gegeven door een welbepaald orgaan."@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "Consultatievraag"@nl .
+      rdfs:label "Consultatie-antwoord"@nl .
 
 <https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag>
       a       owl:Class ;
@@ -151,7 +151,7 @@ prov:generated
       a       owl:Class ;
       rdfs:comment "Verkorte samenvatting van de agendapunten en bijhorende beslissingen."@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "Nieuwsbrief info"@nl .
+      rdfs:label "Nieuwsbriefinfo"@nl .
 
 <https://data.vlaanderen.be/ns/besluitvorming#PublicatieBelgischStaatsblad>
       a       owl:Class ;
@@ -172,6 +172,13 @@ prov:generated
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "Verdaagd"@nl .
 
+<https://data.vlaanderen.be/ns/besluitvorming#Versie>
+      a       owl:Class ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl ;
+      owl:oneOf (<https://data.vlaanderen.be/ns/besluitvorming/Versie/semel> <https://data.vlaanderen.be/ns/besluitvorming/Versie/bis> <https://data.vlaanderen.be/ns/besluitvorming/Versie/ter> <https://data.vlaanderen.be/ns/besluitvorming/Versie/quater> <https://data.vlaanderen.be/ns/besluitvorming/Versie/quinquies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/sexies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/septies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/octies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/novies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/decies>) .
+
 <https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag>
       a       owl:Class ;
       rdfs:comment "Vertalingsaanvraag van een documentversie."@nl ;
@@ -183,7 +190,7 @@ prov:generated
       rdfs:comment "Het tijdstip waarop een entiteit is aangemaakt."@nl ;
       rdfs:domain rdfs:Resource ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "creatieTimestamp"@nl ;
+      rdfs:label "aanmaakdatum"@nl ;
       rdfs:range xsd:dateTime ;
       rdfs:subPropertyOf dcterms:created .
 
@@ -197,7 +204,7 @@ prov:generated
 
 <https://data.vlaanderen.be/ns/besluitvorming#aanvraag>
       a       owl:DatatypeProperty ;
-      rdfs:comment "De tekstuele inhoud van een aanvraag tot raadgeving."@nl ;
+      rdfs:comment "De tekstuele inhoud van een aanvraag tot consultatie."@nl ;
       rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "aanvraag"@nl ;
@@ -239,7 +246,7 @@ prov:generated
 
 <https://data.vlaanderen.be/ns/besluitvorming#heeftAanvrager>
       a       owl:ObjectProperty ;
-      rdfs:comment "Duidt aan dat een publicatie een hoedanigheid als aanvrager heeft."@nl ;
+      rdfs:comment "Duidt aan dat een publicatie door een agent is aangevraagd."@nl ;
       rdfs:domain eli:LegalExpression ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "heeft aanvrager"@nl ;
@@ -376,7 +383,7 @@ prov:generated
 
 <https://data.vlaanderen.be/ns/besluitvorming#uitkomst>
       a       owl:ObjectProperty ;
-      rdfs:comment "Het kernwoord dat de uitkomst van een raadgeving beschrijft."@nl ;
+      rdfs:comment "Het kernwoord dat de uitkomst van een consultatie omschrijft."@nl ;
       rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "uitkomst"@nl ;
@@ -391,12 +398,12 @@ prov:generated
       rdfs:range xsd:boolean .
 
 <https://data.vlaanderen.be/ns/besluitvorming#versie>
-      a       owl:DatatypeProperty ;
+      a       owl:ObjectProperty ;
       rdfs:comment "De indicator die de versie van een agenda aangeeft, bv. agenda A, agenda B, enzovoort."@nl ;
       rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "versie"@nl ;
-      rdfs:range xsd:string .
+      rdfs:range <https://data.vlaanderen.be/ns/besluitvorming#Versie> .
 
 <https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum>
       a       owl:DatatypeProperty ;
@@ -407,91 +414,649 @@ prov:generated
       rdfs:range xsd:date ;
       rdfs:subPropertyOf dcterms:date .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/advies>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/CultuurJeugdSportEnMedia>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/akkoordBestuurszaken>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/EconomieWetenschapEnInnovatie>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/begrotingsakkoord>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/FinanciënEnBegroting>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/besluitAnder>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/InternationaalVlaanderen>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/besluitVR>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/KanselarijEnBestuur>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/decreet>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/LandbouwEnVisserij>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/europeseOmzettingstabellen>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/MobiliteitEnOpenbareWerken>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/gewijzigdeBepalingen>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/Omgeving>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/mededeling>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/OnderwijsEnVorming>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/memorieVanToelichting>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/WelzijnVolksgezondheidEnGezin>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/ministerieelBesluit>
+<https://data.vlaanderen.be/ns/besluitvorming/Beleidsdomein/WerkEnSocialeEconomie>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/nota>
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinCultuurJeugdEnMedia>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/verslagAanVR>
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinFinanciënEnBegroting>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/verslagIKW>
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinInternationaalVlaanderenMetUitzonderingVanHetBeleidsveldToerisme>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/witboek>
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinLandbouwEnVisserij>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinMobiliteitEnOpenbareWerken>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinOnderwijsEnVorming>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldCoördinatieBrussel>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldCoördinatieVlaamseRand>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldDierenwelzijn>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldEnergie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldGelijkeKansen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldLeefmilieuEnNatuurMetInbegripVanDeNatuurlijkeRijkdommenEnHetPlattelandsbeleid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldOnroerendErfgoed>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldProfessioneleVorming>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldRuimtelijkeOrdening>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldSocialeEconomie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldSport>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldToerisme>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldWerkgelegenheid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsveldWoonbeleid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/coördinatieVanHetArmoedebeleid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/financiëleTegemoetkomingNaarAanleidingVanSchadeVeroorzaaktDoorAlgemeneRampen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/gerechtelijkeProcedureVoorOnteigeningen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/overheidsopdrachtenEnErkenningVanAannemers>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/protocol>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/reguleringsmanagement>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/uitbouwVanDeGeografischeInformatieInfrastructuur>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinBestuurszakenMetUitzonderingVanOverheidsopdrachtenEnerkenningVanAannemers,HetReguleringsmanagement,RampenschadeEnDeGerechtelijkeProcedureVoorOnteigeningen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinDienstenVoorHetAlgemeenRegeringsbeleid,MetUitzonderingVanHetGelijkekansenbeleid,DeCoördinatieVanBrusselEnDeVlaamseRand,InformatieEnGeografischeInformatie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinEconomie,WetenschapEnInnovatie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/beleidsdomeinWelzijn,VolksgezondheidEnGezin>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Bevoegdheid/informatiemaatschappij,hetStructurerenEnOpslaan,UitwisselenEnOntsluitenVanInformatie,EnDeInfolijn>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Consultatie-uitkomst/instemming>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Consultatie-uitkomst/instemmingMitsVoorwaarden>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Consultatie-uitkomst/verwerping>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ConsultatieType/advies>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ConsultatieType/akkoord>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ConsultatieType/consultatie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ConsultatieType/raadpleging>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ProcedurestapType/aktename>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/ProcedurestapType/beslissing>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/PublicatieType/bijUittreksel>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/PublicatieType/inExtenso>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/BrusselEnVlaamseRand>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/Vlaanderen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/armoedebestrijding>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/begrotingEnFinanciën>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/belastingen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/bestuurszaken>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/bodemgrond>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/bouwen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/buitenlandsBeleid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/criminaliteit>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/cultuur>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/dierenwelzijn>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/digitaleAgenda>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/economie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/energie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/gelijkeKansen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/inburgeringEnIntegratie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/innovatie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/jeugd>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/landbouw>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/media>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/milieu>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/mobiliteit>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/onderwijs>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/onroerendErfgoed>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/ontwikkelingssamenwerking>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/openbareWerken>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/ruimtelijkeOrdening>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/socialeEconomie>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/sport>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/stedelijkBeleid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/toerisme>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/visserij>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/volksgezondheid>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/vorming>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/welzijn>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/werk>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/wetenschap>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/wonen>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Thema/zorg>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/bis>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/decies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/novies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/octies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/quater>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/quinquies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/semel>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/septies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/sexies>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/ter>
+      a       <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Vertrouwelijkheid/ministersEnKabinetchefs>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Vertrouwelijkheid/ministers,KabinetchefsEnKabinetten>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Vertrouwelijkheid/ministers,Kabinetchefs,Kabinetten,Departementen,VlaamsParlementEnRekenhof>
+      a       skos:Concept ;
+      rdfs:comment "TODO"@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "TODO"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Vertrouwelijkheid/ministers,Kabinetchefs,Kabinetten,Departementen,VlaamsParlement,RekenhofEnPubliek>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;

@@ -24,7 +24,7 @@
 		},
 		"Agenda.versie":{
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#versie",
-			"@type":"http://www.w3.org/2001/XMLSchema#string"
+			"@type":"https://data.vlaanderen.be/ns/besluitvorming#Versie"
 		},
 		"Consultatie-antwoord.opmerking":{
 			"@id":"http://www.w3.org/2000/01/rdf-schema#comment",
@@ -93,9 +93,24 @@
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#aanvraagdatum",
 			"@type":"http://www.w3.org/2001/XMLSchema#dateTime"
 		},
+		"beleidsdomein":{
+			"@id":"https://data.vlaanderen.be/ns/generiek#beleidsdomein",
+			"@type":"http://www.w3.org/2004/02/skos/core#Concept",
+			"@container":"@set"
+		},
 		"beschrijving":{
 			"@id":"http://data.europa.eu/eli/ontology#description",
 			"@type":"http://www.w3.org/2001/XMLSchema#string"
+		},
+		"bevat":{
+			"@id":"http://purl.org/dc/terms/hasPart",
+			"@type":"https://data.vlaanderen.be/ns/besluitvorming#Documentversie",
+			"@container":"@set"
+		},
+		"bevoegdheid":{
+			"@id":"https://data.vlaanderen.be/ns/generiek#bevoegdheid",
+			"@type":"http://www.w3.org/2004/02/skos/core#Concept",
+			"@container":"@set"
 		},
 		"digitaal":{
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#digitaal",
@@ -104,11 +119,6 @@
 		"doeltaal":{
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#doeltaal",
 			"@type":"http://www.w3.org/2004/02/skos/core#Concept"
-		},
-		"doorloopt":{
-			"@id":"http://purl.org/dc/terms/hasPart",
-			"@type":"http://dbpedia.org/ontology/UnitOfWork",
-			"@container":"@set"
 		},
 		"eind":{
 			"@id":"http://www.w3.org/ns/prov#endedAtTime",
@@ -269,7 +279,8 @@
 		},
 		"status":{
 			"@id":"http://www.w3.org/ns/adms#status",
-			"@type":"https://data.vlaanderen.be/ns/besluitvorming#Status"
+			"@type":"https://data.vlaanderen.be/ns/besluitvorming#Status",
+			"@container":"@set"
 		},
 		"statusdatum":{
 			"@id":"https://data.vlaanderen.be/ns/melding#statusdatum",
