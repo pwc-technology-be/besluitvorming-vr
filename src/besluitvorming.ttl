@@ -42,17 +42,21 @@ dcterms:MediaType
       a       rdfs:Class ;
       rdfs:label "Mediatype"@nl .
 
+dcterms:alternative
+      a       rdf:Property ;
+      rdfs:label "korte titel"@nl .
+
 dcterms:created
       a       rdf:Property ;
-      rdfs:label "datum aangemaakt"@nl , "timestamp van upload"@nl .
+      rdfs:label "timestamp van aanreiking"@nl , "aanmaakdatum"@nl .
+
+dcterms:creator
+      a       rdf:Property ;
+      rdfs:label "auteur"@nl .
 
 dcterms:format
       a       rdf:Property ;
       rdfs:label "formaat"@nl .
-
-dcterms:haPart
-      a       rdf:Property ;
-      rdfs:label "bevat"@nl .
 
 dcterms:hasPart
       a       rdf:Property ;
@@ -60,7 +64,7 @@ dcterms:hasPart
 
 dcterms:issued
       a       rdf:Property ;
-      rdfs:label "timestamp van publicatie"@nl .
+      rdfs:label "datum uitgestuurd"@nl , "publicatiedatum"@nl .
 
 dcterms:language
       a       rdf:Property ;
@@ -86,9 +90,21 @@ dcterms:type
       a       rdf:Property ;
       rdfs:label "type"@nl .
 
+rdfs:Resource
+      a       rdf:Property ;
+      rdfs:label "vertrouwelijkheid"@nl .
+
+rdfs:comment
+      a       rdf:Property ;
+      rdfs:label "opmerking"@nl .
+
 skos:Concept
       a       rdfs:Class ;
-      rdfs:label "Raadgevingstype"@nl , "Bevoegdheid"@nl , "Taal"@nl , "Vertrouwelijkheid"@nl , "Publicatietype"@nl , "Beleidsdomein"@nl , "Thema"@nl , "Type dossier"@nl , "Statuswaarde"@nl , "Type document"@nl , "Raadgevingsuitkomst"@nl .
+      rdfs:label "Documenttype"@nl , "Bevoegdheid"@nl , "Taal"@nl , "Vertrouwelijkheid"@nl , "Publicatietype"@nl , "Beleidsdomein"@nl , "Consultatie-uitkomst"@nl , "Thema"@nl , "Statuswaarde"@nl , "Consultatietype"@nl .
+
+<http://www.w3.org/ns/adms#identifier>
+      a       rdf:Property ;
+      rdfs:label "werknummer van het Belgisch Staatsblad"@nl , "nummer"@nl .
 
 <http://www.w3.org/ns/adms#status>
       a       rdf:Property ;
@@ -107,20 +123,29 @@ prov:generated
       vann:preferredNamespaceUri
               "https://data.vlaanderen.be/ns/besluitvorming" .
 
+<https://data.vlaanderen.be/ns/besluitvorming#Agenda>
+      a       owl:Class ;
+      rdfs:comment "Agenda die besproken wordt tijdens een zitting."@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "Agenda"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord>
+      a       owl:Class ;
+      rdfs:comment "Input gegeven door een welbepaald orgaan."@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "Consultatievraag"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag>
+      a       owl:Class ;
+      rdfs:comment "Vraag tot consultatie."@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "Consultatievraag"@nl .
+
 <https://data.vlaanderen.be/ns/besluitvorming#Documentversie>
       a       owl:Class ;
       rdfs:comment "Versie van een document."@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "Documentversie"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming#NUMAC>
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Het werknummer van een publicatie zoals het door het Belgisch Staatsblad is toegekend."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#PublicatieBelgischStaatsblad> ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "werknummer van het Belgisch Staatsblad"@nl ;
-      rdfs:range xsd:integer ;
-      rdfs:subPropertyOf <http://www.w3.org/ns/adms#identifier> .
 
 <https://data.vlaanderen.be/ns/besluitvorming#NieuwsbriefInfo>
       a       owl:Class ;
@@ -135,23 +160,32 @@ prov:generated
       rdfs:label "Publicatie in het Belgisch Staatsblad"@nl ;
       rdfs:subClassOf eli:LegalExpression .
 
-<https://data.vlaanderen.be/ns/besluitvorming#Raadgeving>
-      a       owl:Class ;
-      rdfs:comment "Input gegeven door een welbepaald orgaan met betrekking tot een dossier in een welbepaalde procedurestap."@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "Raadgeving"@nl .
-
 <https://data.vlaanderen.be/ns/besluitvorming#Status>
       a       owl:Class ;
       rdfs:comment "De status van een entiteit die toegekend is op een bepaald tijdstip."@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "Status"@nl .
 
+<https://data.vlaanderen.be/ns/besluitvorming#Verdaagd>
+      a       owl:Class ;
+      rdfs:comment "De indicator die aangeeft of een entiteit verdaagd is en eventueel naar wanneer."@nl ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "Verdaagd"@nl .
+
 <https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag>
       a       owl:Class ;
       rdfs:comment "Vertalingsaanvraag van een documentversie."@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "Vertalingsaanvraag"@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum>
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Het tijdstip waarop een entiteit is aangemaakt."@nl ;
+      rdfs:domain rdfs:Resource ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "creatieTimestamp"@nl ;
+      rdfs:range xsd:dateTime ;
+      rdfs:subPropertyOf dcterms:created .
 
 <https://data.vlaanderen.be/ns/besluitvorming#aantalWoorden>
       a       owl:DatatypeProperty ;
@@ -164,45 +198,19 @@ prov:generated
 <https://data.vlaanderen.be/ns/besluitvorming#aanvraag>
       a       owl:DatatypeProperty ;
       rdfs:comment "De tekstuele inhoud van een aanvraag tot raadgeving."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Raadgeving> ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "aanvraag"@nl ;
       rdfs:range xsd:string .
 
-<https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid>
+<https://data.vlaanderen.be/ns/besluitvorming#aanvraagdatum>
       a       owl:DatatypeProperty ;
-      rdfs:comment "De indicator die aangeeft of een entiteit voor iedereen zichtbaar is."@nl ;
-      rdfs:domain rdfs:Resource ;
+      rdfs:comment "De datum waarop een consultatievraag is gesteld."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "actieve openbaarheid"@nl ;
-      rdfs:range xsd:boolean .
-
-<https://data.vlaanderen.be/ns/besluitvorming#datumAangevraagdVoorMR>
-      a       owl:DatatypeProperty ;
-      rdfs:comment "De datum van de ministerraad waarop een dossier, dat zich in een welbepaalde procedurestap bevindt, is geagendeerd."@nl ;
-      rdfs:domain <http://dbpedia.org/ontology/UnitOfWork> ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "datum aangevraagd voor ministerraad"@nl ;
-      rdfs:range xsd:date ;
-      rdfs:subPropertyOf dcterms:date .
-
-<https://data.vlaanderen.be/ns/besluitvorming#datumUiterstePublicatie>
-      a       owl:DatatypeProperty ;
-      rdfs:comment "De datum waarop de tekst ten laatste gepubliceerd zou moeten zijn."@nl ;
-      rdfs:domain eli:LegalExpression ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "uiterste publicatiedatum"@nl ;
-      rdfs:range xsd:date ;
-      rdfs:subPropertyOf dcterms:date .
-
-<https://data.vlaanderen.be/ns/besluitvorming#datumVerwachteOplevering>
-      a       owl:DatatypeProperty ;
-      rdfs:comment "De datum waarop men verwacht een vertaling (ten laatste) te ontvangen."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag> ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "datum van verwachte oplevering"@nl ;
-      rdfs:range xsd:date ;
-      rdfs:subPropertyOf dcterms:date .
+      rdfs:label "aanvraagdatum"@nl ;
+      rdfs:range xsd:dateTime ;
+      rdfs:subPropertyOf dcterms:created .
 
 <https://data.vlaanderen.be/ns/besluitvorming#digitaal>
       a       owl:DatatypeProperty ;
@@ -221,13 +229,58 @@ prov:generated
       rdfs:range skos:Concept ;
       rdfs:subPropertyOf dcterms:language .
 
-<https://data.vlaanderen.be/ns/besluitvorming#gearchiveerd>
+<https://data.vlaanderen.be/ns/besluitvorming#finaleVersie>
       a       owl:DatatypeProperty ;
-      rdfs:comment "De indicator die aangeeft of een dossier gearchiveerd is."@nl ;
+      rdfs:comment "De indicator die aangeeft of een agenda de finale versie is voor een zitting."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "finale versie"@nl ;
+      rdfs:range xsd:boolean .
+
+<https://data.vlaanderen.be/ns/besluitvorming#heeftAanvrager>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een publicatie een hoedanigheid als aanvrager heeft."@nl ;
+      rdfs:domain eli:LegalExpression ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "heeft aanvrager"@nl ;
+      rdfs:range dcterms:Agent ;
+      vann:usageNote "Deze relatie dient idealiter geinstantieerd te worden als een OSLO-Mandaat::Mandataris."@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een entiteit één of meer agenten als bevoegde heeft."@nl ;
+      rdfs:domain rdfs:Resource ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "heeft bevoegde"@nl ;
+      rdfs:range dcterms:Agent ;
+      vann:usageNote "Deze relatie dient idealiter geinstantieerd te worden als een OSLO-Mandaat::Mandataris."@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een entiteit één of meerdere agenten als contactpersoon kan hebben."@nl ;
+      rdfs:domain rdfs:Resource ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "heeft contactpersoon"@nl ;
+      rdfs:range dcterms:Agent ;
+      vann:usageNote "Deze relatie dient idealiter geinstantieerd te worden als een OSLO-Organisatie::Hoedanigheid."@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#heeftIndiener>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een dossier een agent als indiener heeft."@nl ;
       rdfs:domain <http://dbpedia.org/ontology/Case> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "gearchiveerd"@nl ;
-      rdfs:range xsd:boolean .
+      rdfs:label "heeft indiener"@nl ;
+      rdfs:range dcterms:Agent ;
+      vann:usageNote "Deze relatie dient idealiter geinstantieerd te worden als een OSLO-Mandaat::Mandataris."@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#heeftVorigeVersie>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een agenda een vorige versie kan hebben."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "heeft vorige versie"@nl ;
+      rdfs:range <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
+      rdfs:subPropertyOf dcterms:relation .
 
 <https://data.vlaanderen.be/ns/besluitvorming#inhoud>
       a       owl:DatatypeProperty ;
@@ -238,6 +291,47 @@ prov:generated
       rdfs:range xsd:string ;
       rdfs:subPropertyOf prov:value .
 
+<https://data.vlaanderen.be/ns/besluitvorming#isAangevraagdVoor>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat iemand heeft aangevraagd om een procedurestap op de agenda te plaatsen van een welbepaalde zitting."@nl ;
+      rdfs:domain <http://dbpedia.org/ontology/UnitOfWork> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "is aangevraagd voor"@nl ;
+      rdfs:range besluit:Zitting .
+
+<https://data.vlaanderen.be/ns/besluitvorming#isGeagendeerdVia>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een dossier in een welbepaalde procedurestap gebruikt wordt als informatiebron om een agendapunt te bespreken."@nl ;
+      rdfs:domain <http://dbpedia.org/ontology/UnitOfWork> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "is geagendeerd via"@nl ;
+      rdfs:range besluit:Agendapunt .
+
+<https://data.vlaanderen.be/ns/besluitvorming#isGerealiseerdDoor>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een beslissing gerealiseerd wordt via een publicatie."@nl ;
+      rdfs:domain besluit:Besluit ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "is gerealiseerd door"@nl ;
+      rdfs:range eli:LegalExpression .
+
+<https://data.vlaanderen.be/ns/besluitvorming#isGesteldAan>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een consultatievraag aan een agent gesteld wordt."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "is gesteld aan"@nl ;
+      rdfs:range dcterms:Agent ;
+      vann:usageNote "Deze relatie dient idealiter geinstantieerd te worden als een OSLO-Organisatie::Hoedanigheid of een OSLO-Organisatie::Organisatie."@nl .
+
+<https://data.vlaanderen.be/ns/besluitvorming#isVertalingVan>
+      a       owl:ObjectProperty ;
+      rdfs:comment "Duidt aan dat een documentversie gerelateerd is aan een andere documentversie doordat deze tweede een vertaling van de eerste is."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "is vertaling van"@nl ;
+      rdfs:range <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> .
+
 <https://data.vlaanderen.be/ns/besluitvorming#korteTitel>
       a       owl:DatatypeProperty ;
       rdfs:comment "De verkorte titel van een entiteit."@nl ;
@@ -247,154 +341,157 @@ prov:generated
       rdfs:range xsd:string ;
       rdfs:subPropertyOf dcterms:alternative .
 
-<https://data.vlaanderen.be/ns/besluitvorming#nummer>
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Het nummer dat een entiteit identificeert."@nl ;
-      rdfs:domain rdfs:Resource ;
+<https://data.vlaanderen.be/ns/besluitvorming#nieuweDatum>
+      a       owl:ObjectProperty ;
+      rdfs:comment "De nieuwe datum waarnaar een entiteit verdaagd is."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Verdaagd> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "nummer"@nl ;
-      rdfs:range xsd:integer ;
-      rdfs:subPropertyOf <http://www.w3.org/ns/adms#identifier> .
+      rdfs:label "nieuwe datum"@nl ;
+      rdfs:range besluit:Zitting .
 
-<https://data.vlaanderen.be/ns/besluitvorming#orgaan>
+<https://data.vlaanderen.be/ns/besluitvorming#ontvangstdatum>
       a       owl:DatatypeProperty ;
-      rdfs:comment "Het orgaan dat instaat voor het verstrekken van een raadgeving."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Raadgeving> ;
+      rdfs:comment "De datum waarop een consultatie-antwoord is ontvangen."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "orgaan"@nl ;
-      rdfs:range xsd:string .
+      rdfs:label "ontvangstdatum"@nl ;
+      rdfs:range xsd:dateTime .
 
 <https://data.vlaanderen.be/ns/besluitvorming#samenvatting>
       a       owl:DatatypeProperty ;
-      rdfs:comment "De korte tekst die een ontvangen raadgeving samenvat."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Raadgeving> ;
+      rdfs:comment "De korte tekst die een ontvangen consultatie-antwoord samenvat."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "samenvatting"@nl ;
       rdfs:range xsd:string .
 
+<https://data.vlaanderen.be/ns/besluitvorming#uiterstePublicatiedatum>
+      a       owl:DatatypeProperty ;
+      rdfs:comment "De datum waarop de tekst ten laatste gepubliceerd zou moeten zijn."@nl ;
+      rdfs:domain eli:LegalExpression ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "uiterste publicatiedatum"@nl ;
+      rdfs:range xsd:date ;
+      rdfs:subPropertyOf dcterms:date .
+
 <https://data.vlaanderen.be/ns/besluitvorming#uitkomst>
       a       owl:ObjectProperty ;
       rdfs:comment "Het kernwoord dat de uitkomst van een raadgeving beschrijft."@nl ;
-      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Raadgeving> ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord> ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "uitkomst"@nl ;
       rdfs:range skos:Concept .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/advies>
+<https://data.vlaanderen.be/ns/besluitvorming#verdaagd>
+      a       owl:DatatypeProperty ;
+      rdfs:comment "De indicator die aangeeft of een entiteit verdaagd is."@nl ;
+      rdfs:domain rdfs:Resource ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "verdaagd"@nl ;
+      rdfs:range xsd:boolean .
+
+<https://data.vlaanderen.be/ns/besluitvorming#versie>
+      a       owl:DatatypeProperty ;
+      rdfs:comment "De indicator die de versie van een agenda aangeeft, bv. agenda A, agenda B, enzovoort."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "versie"@nl ;
+      rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum>
+      a       owl:DatatypeProperty ;
+      rdfs:comment "De datum waarop men verwacht een vertaling (ten laatste) te ontvangen."@nl ;
+      rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag> ;
+      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+      rdfs:label "verwachte opleverdatum"@nl ;
+      rdfs:range xsd:date ;
+      rdfs:subPropertyOf dcterms:date .
+
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/advies>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/akkoordBestuurszaken>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/akkoordBestuurszaken>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/begrotingsakkoord>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/begrotingsakkoord>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/besluitAnder>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/besluitAnder>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/besluitVR>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/besluitVR>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/decreet>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/decreet>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/europeseOmzettingstabellen>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/europeseOmzettingstabellen>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/gewijzigdeBepalingen>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/gewijzigdeBepalingen>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/mededeling>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/mededeling>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/memorieVanToelichting>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/memorieVanToelichting>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/ministerieelBesluit>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/ministerieelBesluit>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/nota>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/nota>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/verslagAanVR>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/verslagAanVR>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/verslagIKW>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/verslagIKW>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
       rdfs:label "TODO"@nl .
 
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDocument/witboek>
-      a       skos:Concept ;
-      rdfs:comment "TODO"@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "TODO"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDossier/besluitVlaamseRegering>
-      a       skos:Concept ;
-      rdfs:comment "TODO"@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "TODO"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDossier/decreetOntwerp>
-      a       skos:Concept ;
-      rdfs:comment "TODO"@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "TODO"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDossier/decreetVoorstel>
-      a       skos:Concept ;
-      rdfs:comment "TODO"@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "TODO"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDossier/mededeling>
-      a       skos:Concept ;
-      rdfs:comment "TODO"@nl ;
-      rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-      rdfs:label "TODO"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming/TypeDossier/ministerieelBesluit>
+<https://data.vlaanderen.be/ns/besluitvorming/DocumentType/witboek>
       a       skos:Concept ;
       rdfs:comment "TODO"@nl ;
       rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
@@ -413,5 +510,5 @@ prov:generated
       rdfs:label "statuswaarde"@nl .
 
 <https://www.w3.org/2000/01/rdf-schema#comment>
-      a       rdf:Property ;
-      rdfs:label "opmerking"@nl .
+      a       rdfs:Class , rdf:Property ;
+      rdfs:label "opmerking"@nl , "Opmerking"@nl .

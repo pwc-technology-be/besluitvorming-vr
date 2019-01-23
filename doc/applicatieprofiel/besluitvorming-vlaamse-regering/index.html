@@ -48,7 +48,7 @@
               <div class="head" role="contentinfo" id="respecHeader">
                 <dl>
                   <dt>Laatste aanpassing</dt>
-                  <dd>2018-12-14</dd>
+                  <dd>2019-01-23</dd>
 
 
 
@@ -147,17 +147,19 @@
                     <p>In dit document wordt correct gebruik van de volgende entiteiten toegelicht:
                       <br />
                       |
+                      <a href="#Agenda">Agenda</a> |
                       <a href="#Agendapunt">Agendapunt</a> |
+                      <a href="#Agent">Agent</a> |
                       <a href="#Besluit">Besluit</a> |
+                      <a href="#Consultatievraag">Consultatievraag</a> |
+                      <a href="#Consultatievraag">Consultatievraag</a> |
                       <a href="#Document">Document</a> |
                       <a href="#Documentversie">Documentversie</a> |
                       <a href="#Dossier">Dossier</a> |
-                      <a href="#Hoedanigheid">Hoedanigheid</a> |
                       <a href="#Nieuwsbrief info">Nieuwsbrief info</a> |
                       <a href="#Procedurestap">Procedurestap</a> |
                       <a href="#Publicatie">Publicatie</a> |
                       <a href="#Publicatie in het Belgisch Staatsblad">Publicatie in het Belgisch Staatsblad</a> |
-                      <a href="#Raadgeving">Raadgeving</a> |
                       <a href="#Vertalingsaanvraag">Vertalingsaanvraag</a> |
                       <a href="#Zitting">Zitting</a> |
                     </p>
@@ -168,8 +170,9 @@
                     <p> In dit document worden de volgende datatypes toegelicht:
                       <br />
                       |
-                      <a href="#Contactpunt">Contactpunt</a> |
+                      <a href="#Opmerking">Opmerking</a> |
                       <a href="#Status">Status</a> |
+                      <a href="#Verdaagd">Verdaagd</a> |
                     </p>
                   </div>
 
@@ -186,25 +189,20 @@
             </div>
 
             <div class="region region--no-space-top">
-              <h3 class="h3" id="Agendapunt"><a href="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-placement="right">Agendapunt</a></h3>
+              <h3 class="h3" id="Agenda"><a href="https://data.vlaanderen.be/ns/besluitvorming#Agenda" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Agenda" data-placement="right">Agenda</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd>Formeel aanvaard te behandelen onderwerp op een zitting.</dd>
+                    <dt>Beschrijving</dt><dd>Agenda die besproken wordt tijdens een zitting.</dd>
 
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Agendapunt%3Adatum%20aangemaakt">datum aangemaakt</a>,
-                      <a href="#Agendapunt%3Adatum%20waarnaar%20uitgesteld">datum waarnaar uitgesteld</a>,
-                      <a href="#Agendapunt%3Aformeel%20goedgekeurd">formeel goedgekeurd</a>,
-                      <a href="#Agendapunt%3Ageeft%20aanleiding%20tot">geeft aanleiding tot</a>,
-                      <a href="#Agendapunt%3Aheeft%20aanwezige">heeft aanwezige</a>,
-                      <a href="#Agendapunt%3Ais%20aangebracht%20na">is aangebracht na</a>,
-                      <a href="#Agendapunt%3Anotulen">notulen</a>,
-                      <a href="#Agendapunt%3Aopmerking">opmerking</a>,
-                      <a href="#Agendapunt%3Apersagenda">persagenda</a>,
-                      <a href="#Agendapunt%3Atitel">titel</a>,
-                      <a href="#Agendapunt%3Avertrouwelijkheid">vertrouwelijkheid</a>.</dd>
+                      <a href="#Agenda%3Abevat">bevat</a>,
+                      <a href="#Agenda%3Adatum%20uitgestuurd">datum uitgestuurd</a>,
+                      <a href="#Agenda%3Afinale%20versie">finale versie</a>,
+                      <a href="#Agenda%3Aheeft%20vorige%20versie">heeft vorige versie</a>,
+                      <a href="#Agenda%3Aopmerking">opmerking</a>,
+                      <a href="#Agenda%3Aversie">versie</a>.</dd>
 
                   </dl>
                 </div>
@@ -224,30 +222,144 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Agendapunt%3Adatum%20aangemaakt" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
+                      <tr id="Agenda%3Abevat" typeof="rdfs:Property" resource="http://purl.org/dc/terms/hasPart">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/created" data-toggle="tooltip" data-content="http://purl.org/dc/terms/created" data-placement="right">
-                            datum aangemaakt</a>
+                            <a href="http://purl.org/dc/terms/hasPart" data-toggle="tooltip" data-content="http://purl.org/dc/terms/hasPart" data-placement="right">
+                            bevat</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De datum waarop een agendapunt is aangemaakt.</td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-placement="right">Agendapunt</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een agenda uit meerdere agendapunten kan bestaan.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Agendapunt%3Adatum%20waarnaar%20uitgesteld" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#datumUitgesteld">
+                      <tr id="Agenda%3Adatum%20uitgestuurd" typeof="rdfs:Property" resource="http://purl.org/dc/terms/issued">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.vlaanderen.be/ns/besluit#datumUitgesteld" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#datumUitgesteld" data-placement="right">
-                            datum waarnaar uitgesteld</a>
+                            <a href="http://purl.org/dc/terms/issued" data-toggle="tooltip" data-content="http://purl.org/dc/terms/issued" data-placement="right">
+                            datum uitgestuurd</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De datum waarnaar een agendapunt werd uitgesteld.</td>
+                        <td property="rdfs:comment">De datum waarop een agenda werd uitgestuurd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Agenda%3Afinale%20versie" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#finaleVersie">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#finaleVersie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#finaleVersie" data-placement="right">
+                            finale versie</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De indicator die aangeeft of een agenda de finale versie is voor een zitting.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Agenda%3Aheeft%20vorige%20versie" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftVorigeVersie">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftVorigeVersie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftVorigeVersie" data-placement="right">
+                            heeft vorige versie</a>
+                          </code>
+                        </td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Agenda" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Agenda" data-placement="right">Agenda</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Duidt aan dat een agenda een vorige versie kan hebben.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Agenda%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een agenda.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Agenda%3Aversie" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#versie">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#versie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#versie" data-placement="right">
+                            versie</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De indicator die de versie van een agenda aangeeft, bv. agenda A, agenda B, enzovoort.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Agendapunt"><a href="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-placement="right">Agendapunt</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Formeel aanvaard te behandelen onderwerp op een zitting.</dd>
+
+                    <dt>Eigenschappen</dt>
+
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Agendapunt%3Aaanmaakdatum">aanmaakdatum</a>,
+                      <a href="#Agendapunt%3Aformeel%20goedgekeurd">formeel goedgekeurd</a>,
+                      <a href="#Agendapunt%3Ageeft%20aanleiding%20tot">geeft aanleiding tot</a>,
+                      <a href="#Agendapunt%3Aheeft%20aanwezige">heeft aanwezige</a>,
+                      <a href="#Agendapunt%3Aingetrokken">ingetrokken</a>,
+                      <a href="#Agendapunt%3Ais%20aangebracht%20na">is aangebracht na</a>,
+                      <a href="#Agendapunt%3Anotulen">notulen</a>,
+                      <a href="#Agendapunt%3Aopmerking">opmerking</a>,
+                      <a href="#Agendapunt%3Atitel%20persagenda">titel persagenda</a>,
+                      <a href="#Agendapunt%3Averdaagd">verdaagd</a>.</dd>
+
+                  </dl>
+                </div>
+
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+
+                      <tr id="Agendapunt%3Aaanmaakdatum" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/created" data-toggle="tooltip" data-content="http://purl.org/dc/terms/created" data-placement="right">
+                            aanmaakdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het tijdstip waarop een agendapunt is aangemaakt.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -273,7 +385,7 @@
                             geeft aanleiding tot</a>
                           </code>
                         </td>
-                        <td><a href="http://data.vlaanderen.be/ns/besluit#Besluit" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Besluit" data-placement="right">Besluit</a></td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Besluit" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Besluit" data-placement="right">Beslissing</a></td>
                         <td>0...1</td>
                         <td property="rdfs:comment">Duidt aan dat een besluit als gevolg van een agendapunt aangemaakt kan worden.</td>
                         <td property="vann:usageNote"></td>
@@ -287,9 +399,23 @@
                             heeft aanwezige</a>
                           </code>
                         </td>
-                        <td><a href="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-placement="right">Hoedanigheid</a></td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
                         <td>0...*</td>
-                        <td property="rdfs:comment">Duidt aan dat een hoedanigheid aanwezig is bij de behandeling van een agendapunt.</td>
+                        <td property="rdfs:comment">Duidt aan dat een agent aanwezig is bij de behandeling van een agendapunt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Agendapunt%3Aingetrokken" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#ingetrokken">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.vlaanderen.be/ns/besluit#ingetrokken" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#ingetrokken" data-placement="right">
+                            ingetrokken</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De indicator die aangeeft of een agendapunt is ingetrokken.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -329,57 +455,58 @@
                             opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De opmerking gegeven bij een agendapunt.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Agendapunt%3Apersagenda" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#persagenda">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.vlaanderen.be/ns/besluit#persagenda" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#persagenda" data-placement="right">
-                            persagenda</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De indicator die aangeeft of een agendapunt in de persagenda mag verschijnen.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Agendapunt%3Atitel" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                      <tr id="Agendapunt%3Atitel%20persagenda" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            titel</a>
+                            titel persagenda</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De titel van een agendapunt.</td>
+                        <td property="rdfs:comment">De titel van een agendapunt in de persagenda.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Agendapunt%3Avertrouwelijkheid" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#vertrouwelijkheid">
+                      <tr id="Agendapunt%3Averdaagd" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#verdaagd">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.vlaanderen.be/ns/besluit#vertrouwelijkheid" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#vertrouwelijkheid" data-placement="right">
-                            vertrouwelijkheid</a>
+                            <a href="http://data.vlaanderen.be/ns/besluit#verdaagd" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#verdaagd" data-placement="right">
+                            verdaagd</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Vertrouwelijkheid</a></td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Verdaagd" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Verdaagd" data-placement="right">Verdaagd</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De indicator die de mate van vertrouwelijkheid van een agendapunt aangeeft.</td>
+                        <td property="rdfs:comment">De indicator die aangeeft of een agendapunt verdaagd is en eventueel naar welke zitting.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
                     </tbody>
                   </table>
+                </div>
+
+            </div>
+
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Agent"><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Iemand die of iets dat kan handelen of een effect kan teweeg brengen.</dd>
+
+                    <dt>Eigenschappen</dt>
+
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+
+                  </dl>
                 </div>
 
             </div>
@@ -396,7 +523,8 @@
                       <a href="#Besluit%3Abeschrijving">beschrijving</a>,
                       <a href="#Besluit%3Aciteeropschrift">citeeropschrift</a>,
                       <a href="#Besluit%3Ageeft%20aanleiding%20tot">geeft aanleiding tot</a>,
-                      <a href="#Besluit%3Agoedgekeurd">goedgekeurd</a>.</dd>
+                      <a href="#Besluit%3Agoedgekeurd">goedgekeurd</a>,
+                      <a href="#Besluit%3Ais%20gerealiseerd%20door">is gerealiseerd door</a>.</dd>
 
                   </dl>
                 </div>
@@ -472,6 +600,268 @@
                         <td></td>
                       </tr>
 
+                      <tr id="Besluit%3Ais%20gerealiseerd%20door" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#isGerealiseerdDoor">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#isGerealiseerdDoor" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#isGerealiseerdDoor" data-placement="right">
+                            is gerealiseerd door</a>
+                          </code>
+                        </td>
+                        <td><a href="http://data.europa.eu/eli/ontology#LegalExpression" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalExpression" data-placement="right">Publicatie</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een beslissing gerealiseerd wordt via een publicatie.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Consultatievraag"><a href="https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag" data-placement="right">Consultatievraag</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Vraag tot consultatie.</dd>
+
+                    <dt>Eigenschappen</dt>
+
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Consultatievraag%3Aaanvraag">aanvraag</a>,
+                      <a href="#Consultatievraag%3Aaanvraagdatum">aanvraagdatum</a>,
+                      <a href="#Consultatievraag%3Aheeft%20contactpersoon">heeft contactpersoon</a>,
+                      <a href="#Consultatievraag%3Ais%20gesteld%20aan">is gesteld aan</a>,
+                      <a href="#Consultatievraag%3Aleidt%20tot">leidt tot</a>,
+                      <a href="#Consultatievraag%3Aopmerking">opmerking</a>,
+                      <a href="#Consultatievraag%3Atype">type</a>.</dd>
+
+                  </dl>
+                </div>
+
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+
+                      <tr id="Consultatievraag%3Aaanvraag" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#aanvraag">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#aanvraag" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#aanvraag" data-placement="right">
+                            aanvraag</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De tekstuele inhoud van een aanvraag tot raadgeving.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aaanvraagdatum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#aanvraagdatum">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#aanvraagdatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#aanvraagdatum" data-placement="right">
+                            aanvraagdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De datum waarop een consultatievraag is gesteld.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aheeft%20contactpersoon" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon" data-placement="right">
+                            heeft contactpersoon</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een consultatievraag één of meerdere agenten als contactpersoon kan hebben.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Ais%20gesteld%20aan" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#isGesteldAan">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#isGesteldAan" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#isGesteldAan" data-placement="right">
+                            is gesteld aan</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Duidt aan dat een consultatievraag aan een agent gesteld wordt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aleidt%20tot" typeof="rdfs:Property" resource="http://www.w3.org/ns/prov#generated">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/prov#generated" data-toggle="tooltip" data-content="http://www.w3.org/ns/prov#generated" data-placement="right">
+                            leidt tot</a>
+                          </code>
+                        </td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord" data-placement="right">Consultatie-antwoord</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">Duidt aan dat een consultatie-antwoord als gevolg van een consultatievraag ontvangen kan worden.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een consultatie-antwoord.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td><a href="" data-toggle="tooltip" data-content="" data-placement="right">Raadgevingstype</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het type van een raadgeving, bv. advies, consultatie etc.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Consultatievraag"><a href="https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord" data-placement="right">Consultatievraag</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>Input gegeven door een welbepaald orgaan.</dd>
+
+                    <dt>Eigenschappen</dt>
+
+                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Consultatievraag%3Abevat">bevat</a>,
+                      <a href="#Consultatievraag%3Aontvangstdatum">ontvangstdatum</a>,
+                      <a href="#Consultatievraag%3Aopmerking">opmerking</a>,
+                      <a href="#Consultatievraag%3Asamenvatting">samenvatting</a>,
+                      <a href="#Consultatievraag%3Auitkomst">uitkomst</a>.</dd>
+
+                  </dl>
+                </div>
+
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+
+                      <tr id="Consultatievraag%3Abevat" typeof="rdfs:Property" resource="http://purl.org/dc/terms/hasPart">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/hasPart" data-toggle="tooltip" data-content="http://purl.org/dc/terms/hasPart" data-placement="right">
+                            bevat</a>
+                          </code>
+                        </td>
+                        <td><a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Document</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een documentversie onderdeel kan uitmaken van een consultatie-antwoord.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aontvangstdatum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#ontvangstdatum">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#ontvangstdatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#ontvangstdatum" data-placement="right">
+                            ontvangstdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De datum waarop een consultatie-antwoord is ontvangen.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een consultatie-antwoord.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Asamenvatting" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#samenvatting">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#samenvatting" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#samenvatting" data-placement="right">
+                            samenvatting</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De korte tekst die een ontvangen consultatie-antwoord samenvat.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Consultatievraag%3Auitkomst" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#uitkomst">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#uitkomst" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#uitkomst" data-placement="right">
+                            uitkomst</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Consultatie-uitkomst</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het kernwoord dat de uitkomst van een raadgeving beschrijft.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
                     </tbody>
                   </table>
                 </div>
@@ -487,10 +877,10 @@
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Document%3Aactieve%20openbaarheid">actieve openbaarheid</a>,
+                      <a href="#Document%3Agearchiveerd">gearchiveerd</a>,
                       <a href="#Document%3Aheeft%20versie">heeft versie</a>,
                       <a href="#Document%3Anaam">naam</a>,
-                      <a href="#Document%3Astilgezet">stilgezet</a>,
+                      <a href="#Document%3Aopmerking">opmerking</a>,
                       <a href="#Document%3Astuknummer%20Vlaams%20Parlement">stuknummer Vlaams Parlement</a>,
                       <a href="#Document%3Astuknummer%20Vlaamse%20Regering">stuknummer Vlaamse Regering</a>,
                       <a href="#Document%3Atype">type</a>,
@@ -514,16 +904,16 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Document%3Aactieve%20openbaarheid" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/generiek#actieveOpenbaarheid">
+                      <tr id="Document%3Agearchiveerd" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/generiek#gearchiveerd">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/generiek#actieveOpenbaarheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/generiek#actieveOpenbaarheid" data-placement="right">
-                            actieve openbaarheid</a>
+                            <a href="https://data.vlaanderen.be/ns/generiek#gearchiveerd" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/generiek#gearchiveerd" data-placement="right">
+                            gearchiveerd</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De indicator die aangeeft of een document voor iedereen zichtbaar is.</td>
+                        <td property="rdfs:comment">De indicator die aanduidt of een document gearchiveerd is.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -550,22 +940,22 @@
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>0...1</td>
+                        <td>0...*</td>
                         <td property="rdfs:comment">De naam waarmee een document wordt aangeduid.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Document%3Astilgezet" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/generiek#stilgezet">
+                      <tr id="Document%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/generiek#stilgezet" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/generiek#stilgezet" data-placement="right">
-                            stilgezet</a>
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De indicator die aanduidt of een entiteit is stopgezet op de levenscyclusstatus ter goedkeuring.</td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een document.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -605,7 +995,7 @@
                             type</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">TypeDocument</a></td>
+                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">DocumentType</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">De aard van een document, bijvoorbeeld: decreet, mededeling, nota etc.</td>
                         <td property="vann:usageNote"></td>
@@ -642,11 +1032,13 @@
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
                       <a href="#Documentversie%3Aformaat">formaat</a>,
-                      <a href="#Documentversie%3Ais%20ge%C3%BCpload%20door">is geüpload door</a>,
+                      <a href="#Documentversie%3Ais%20aangebracht%20door">is aangebracht door</a>,
+                      <a href="#Documentversie%3Ais%20vertaling%20van">is vertaling van</a>,
                       <a href="#Documentversie%3Anaam">naam</a>,
+                      <a href="#Documentversie%3Anummer">nummer</a>,
                       <a href="#Documentversie%3Aopmerking">opmerking</a>,
                       <a href="#Documentversie%3Ataal">taal</a>,
-                      <a href="#Documentversie%3Atimestamp%20van%20upload">timestamp van upload</a>,
+                      <a href="#Documentversie%3Atimestamp%20van%20aanreiking">timestamp van aanreiking</a>,
                       <a href="#Documentversie%3Avereist">vereist</a>,
                       <a href="#Documentversie%3Aversie">versie</a>.</dd>
 
@@ -682,16 +1074,30 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Documentversie%3Ais%20ge%C3%BCpload%20door" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
+                      <tr id="Documentversie%3Ais%20aangebracht%20door" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
-                            is geüpload door</a>
+                            is aangebracht door</a>
                           </code>
                         </td>
-                        <td><a href="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-placement="right">Hoedanigheid</a></td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">Duidt aan dat een documentversie door een hoedanigheid is geüpload.</td>
+                        <td property="rdfs:comment">Duidt aan dat een documentversie door een agent is aangebracht, bv. door het te uploaden.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Documentversie%3Ais%20vertaling%20van" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#isVertalingVan">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#isVertalingVan" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#isVertalingVan" data-placement="right">
+                            is vertaling van</a>
+                          </code>
+                        </td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-placement="right">Documentversie</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een documentversie gerelateerd is aan een andere documentversie doordat deze tweede een vertaling van de eerste is.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -704,8 +1110,22 @@
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>0...1</td>
+                        <td>0...*</td>
                         <td property="rdfs:comment">De naam waarmee een documentversie wordt aangeduid.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Documentversie%3Anummer" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/adms#identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#identifier" data-placement="right">
+                            nummer</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Het numeer dat een documentversie identificeert.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -717,7 +1137,7 @@
                             opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De opmerking gegeven bij een documentversie.</td>
                         <td property="vann:usageNote"></td>
@@ -738,16 +1158,16 @@
                         <td><a href="http://publications.europa.eu/mdr/authority/language">Link</a></td>
                       </tr>
 
-                      <tr id="Documentversie%3Atimestamp%20van%20upload" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
+                      <tr id="Documentversie%3Atimestamp%20van%20aanreiking" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/created" data-toggle="tooltip" data-content="http://purl.org/dc/terms/created" data-placement="right">
-                            timestamp van upload</a>
+                            timestamp van aanreiking</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">Het tijdstip waarop een documentversie is geüpload.</td>
+                        <td property="rdfs:comment">Het tijdstip waarop een documentversie is aangereikt, bv. geüpload in het systeem.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -790,23 +1210,23 @@
               <h3 class="h3" id="Dossier"><a href="http://dbpedia.org/ontology/Case" data-toggle="tooltip" data-content="http://dbpedia.org/ontology/Case" data-placement="right">Dossier</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd>Overkoepelend geheel van documenten ter voorbereiding van één of meerdere agendapunten en/of besluiten, die verschillende procedurestappen doorloopt.</dd>
+                    <dt>Beschrijving</dt><dd>Overkoepelend geheel van documenten ter voorbereiding van één of meerdere agendapunten, die verschillende procedurestappen doorloopt.</dd>
 
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Dossier%3Aactieve%20openbaarheid">actieve openbaarheid</a>,
-                      <a href="#Dossier%3Acre%C3%ABert">creëert</a>,
-                      <a href="#Dossier%3Adatum%20aangemaakt">datum aangemaakt</a>,
+                      <a href="#Dossier%3Aaanmaakdatum">aanmaakdatum</a>,
                       <a href="#Dossier%3Adoorloopt">doorloopt</a>,
-                      <a href="#Dossier%3Agearchiveerd">gearchiveerd</a>,
+                      <a href="#Dossier%3Aheeft%20bevoegde">heeft bevoegde</a>,
+                      <a href="#Dossier%3Aheeft%20contactpersoon">heeft contactpersoon</a>,
+                      <a href="#Dossier%3Aheeft%20creator">heeft creator</a>,
+                      <a href="#Dossier%3Aheeft%20indiener">heeft indiener</a>,
                       <a href="#Dossier%3Ais%20gerelateerd%20aan">is gerelateerd aan</a>,
                       <a href="#Dossier%3Akorte%20titel">korte titel</a>,
                       <a href="#Dossier%3Anummer">nummer</a>,
                       <a href="#Dossier%3Aopmerking">opmerking</a>,
                       <a href="#Dossier%3Athema">thema</a>,
-                      <a href="#Dossier%3Atitel">titel</a>,
-                      <a href="#Dossier%3Atype">type</a>.</dd>
+                      <a href="#Dossier%3Atitel">titel</a>.</dd>
 
                   </dl>
                 </div>
@@ -826,44 +1246,16 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Dossier%3Aactieve%20openbaarheid" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#actieveOpenbaarheid" data-placement="right">
-                            actieve openbaarheid</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De indicator die aangeeft of een dossier voor iedereen zichtbaar is.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Dossier%3Acre%C3%ABert" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
-                            creëert</a>
-                          </code>
-                        </td>
-                        <td><a href="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-placement="right">Hoedanigheid</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">Duidt aan dat een dossier door een hoedanigheid is aangemaakt.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Dossier%3Adatum%20aangemaakt" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
+                      <tr id="Dossier%3Aaanmaakdatum" typeof="rdfs:Property" resource="http://purl.org/dc/terms/created">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/created" data-toggle="tooltip" data-content="http://purl.org/dc/terms/created" data-placement="right">
-                            datum aangemaakt</a>
+                            aanmaakdatum</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De datum waarop een dossier is aangemaakt.</td>
+                        <td property="rdfs:comment">Het tijdstip waarop een dossier is aangemaakt.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -882,16 +1274,58 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Dossier%3Agearchiveerd" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#gearchiveerd">
+                      <tr id="Dossier%3Aheeft%20bevoegde" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#gearchiveerd" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#gearchiveerd" data-placement="right">
-                            gearchiveerd</a>
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde" data-placement="right">
+                            heeft bevoegde</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier één of meer agenten als bevoegde heeft.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Dossier%3Aheeft%20contactpersoon" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftContactpersoon" data-placement="right">
+                            heeft contactpersoon</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier één of meerdere agenten als contactpersoon kan hebben.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Dossier%3Aheeft%20creator" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
+                            heeft creator</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De indicator die aangeeft of een dossier gearchiveerd is.</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier door een agent is aangemaakt.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Dossier%3Aheeft%20indiener" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftIndiener">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftIndiener" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftIndiener" data-placement="right">
+                            heeft indiener</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier een agent als indiener heeft.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -910,44 +1344,44 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Dossier%3Akorte%20titel" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#korteTitel">
+                      <tr id="Dossier%3Akorte%20titel" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#korteTitel" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#korteTitel" data-placement="right">
+                            <a href="http://purl.org/dc/terms/alternative" data-toggle="tooltip" data-content="http://purl.org/dc/terms/alternative" data-placement="right">
                             korte titel</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">De verkorte titel van een dossier.</td>
+                        <td property="rdfs:comment">De korte titel van een dossier.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Dossier%3Anummer" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#nummer">
+                      <tr id="Dossier%3Anummer" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#nummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#nummer" data-placement="right">
+                            <a href="http://www.w3.org/ns/adms#identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#identifier" data-placement="right">
                             nummer</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a></td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">Het nummer dat een dossier identificeert.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Dossier%3Aopmerking" typeof="rdfs:Property" resource="https://www.w3.org/2000/01/rdf-schema#comment">
+                      <tr id="Dossier%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
                             opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
-                        <td property="rdfs:comment">De opmerking gegeven bij een dosier.</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een dossier.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -960,7 +1394,7 @@
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Thema</a></td>
-                        <td>0...*</td>
+                        <td>1...*</td>
                         <td property="rdfs:comment">Het thema van een dossier.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
@@ -976,101 +1410,6 @@
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">De titel van een dossier.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Dossier%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
-                            type</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">TypeDossier</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Het type van een dossier, bv. mededeling.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-
-            </div>
-
-            <div class="region region--no-space-top">
-              <h3 class="h3" id="Hoedanigheid"><a href="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#Hoedanigheid" data-placement="right">Hoedanigheid</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Beschrijving</dt><dd>Agent met een Functie.</dd>
-
-                    <dt>Gebruik</dt><dd>Laat een Functie toe om te handelen, bv ihkv een Dienstverlening (bv diversiteitsplan wordt opgemaakt door diversieteitsambtenaar).</dd>
-
-                    <dt>Eigenschappen</dt>
-
-                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Hoedanigheid%3Abeleidsdomein">beleidsdomein</a>,
-                      <a href="#Hoedanigheid%3Abevoegdheid">bevoegdheid</a>,
-                      <a href="#Hoedanigheid%3Acontactinfo">contactinfo</a>.</dd>
-
-                  </dl>
-                </div>
-
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
-                        <th class="data-table__header-title--sortable">Verwacht Type</th>
-                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
-                        <th class="data-table__header-title--sortable">Beschrijving</th>
-                        <th class="data-table__header-title--sortable">Gebruik</th>
-                        <th class="data-table__header-title--sortable">Codelijst</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-
-                      <tr id="Hoedanigheid%3Abeleidsdomein" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/organisatie#beleidsdomein">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/organisatie#beleidsdomein" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#beleidsdomein" data-placement="right">
-                            beleidsdomein</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Beleidsdomein</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">Het beleidsdomein dat toegewezen is aan een minister.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Hoedanigheid%3Abevoegdheid" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/organisatie#bevoegdheid">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/organisatie#bevoegdheid" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#bevoegdheid" data-placement="right">
-                            bevoegdheid</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Bevoegdheid</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">De bevoegdheid van een minister.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Hoedanigheid%3Acontactinfo" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/organisatie#contactinfo">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/organisatie#contactinfo" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/organisatie#contactinfo" data-placement="right">
-                            contactinfo</a>
-                          </code>
-                        </td>
-                        <td><a href="http://schema.org/ContactPoint" data-toggle="tooltip" data-content="http://schema.org/ContactPoint" data-placement="right">ContactInfo</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Informatie zoals email, telefoon... die toelaat de hoedanigheid te contacteren.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1092,8 +1431,9 @@
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
                       <a href="#Nieuwsbrief%20info%3Ainhoud">inhoud</a>,
                       <a href="#Nieuwsbrief%20info%3Aondertitel">ondertitel</a>,
+                      <a href="#Nieuwsbrief%20info%3Aopmerking">opmerking</a>,
+                      <a href="#Nieuwsbrief%20info%3Apublicatiedatum">publicatiedatum</a>,
                       <a href="#Nieuwsbrief%20info%3Athema">thema</a>,
-                      <a href="#Nieuwsbrief%20info%3Atimestamp%20van%20publicatie">timestamp van publicatie</a>,
                       <a href="#Nieuwsbrief%20info%3Atitel">titel</a>.</dd>
 
                   </dl>
@@ -1142,6 +1482,34 @@
                         <td></td>
                       </tr>
 
+                      <tr id="Nieuwsbrief%20info%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een nieuwsbriefinfo-element.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Nieuwsbrief%20info%3Apublicatiedatum" typeof="rdfs:Property" resource="http://purl.org/dc/terms/issued">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/issued" data-toggle="tooltip" data-content="http://purl.org/dc/terms/issued" data-placement="right">
+                            publicatiedatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De datum waarop een nieuwsbrief is gepubliceerd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
                       <tr id="Nieuwsbrief%20info%3Athema" typeof="rdfs:Property" resource="http://purl.org/dc/terms/subject">
                         <td>
                           <code property="rdfs:label">
@@ -1152,20 +1520,6 @@
                         <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Thema</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">Het thema van een nieuwsbrief.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Nieuwsbrief%20info%3Atimestamp%20van%20publicatie" typeof="rdfs:Property" resource="http://purl.org/dc/terms/issued">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/issued" data-toggle="tooltip" data-content="http://purl.org/dc/terms/issued" data-placement="right">
-                            timestamp van publicatie</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De datum waarop een nieuwsbrief is gepubliceerd.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1201,12 +1555,15 @@
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
                       <a href="#Procedurestap%3Abevat">bevat</a>,
                       <a href="#Procedurestap%3Abevat">bevat</a>,
-                      <a href="#Procedurestap%3Adatum%20aangevraagd%20voor%20ministerraad">datum aangevraagd voor ministerraad</a>,
                       <a href="#Procedurestap%3Afase">fase</a>,
                       <a href="#Procedurestap%3Ageeft%20aanleiding%20tot">geeft aanleiding tot</a>,
+                      <a href="#Procedurestap%3Ais%20aangevraagd%20voor">is aangevraagd voor</a>,
+                      <a href="#Procedurestap%3Ais%20geagendeerd%20via">is geagendeerd via</a>,
+                      <a href="#Procedurestap%3Ais%20gerelateerd%20aan">is gerelateerd aan</a>,
                       <a href="#Procedurestap%3Akorte%20titel">korte titel</a>,
                       <a href="#Procedurestap%3Aopmerking">opmerking</a>,
-                      <a href="#Procedurestap%3Atitel">titel</a>.</dd>
+                      <a href="#Procedurestap%3Atitel">titel</a>,
+                      <a href="#Procedurestap%3Avertrouwelijkheid">vertrouwelijkheid</a>.</dd>
 
                   </dl>
                 </div>
@@ -1226,16 +1583,16 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Procedurestap%3Abevat" typeof="rdfs:Property" resource="http://purl.org/dc/terms/haPart">
+                      <tr id="Procedurestap%3Abevat" typeof="rdfs:Property" resource="http://purl.org/dc/terms/hasPart">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/haPart" data-toggle="tooltip" data-content="http://purl.org/dc/terms/haPart" data-placement="right">
+                            <a href="http://purl.org/dc/terms/hasPart" data-toggle="tooltip" data-content="http://purl.org/dc/terms/hasPart" data-placement="right">
                             bevat</a>
                           </code>
                         </td>
-                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-placement="right">Documentversie</a></td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Consultatievraag" data-placement="right">Consultatievraag</a></td>
                         <td>0...*</td>
-                        <td property="rdfs:comment">Duidt aan dat een dossier in een welbepaalde procedurestap een documentversie kan bevatten.</td>
+                        <td property="rdfs:comment">Duidt aan dat een groter geheel uit meerdere onderdelen kan bestaan.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1247,23 +1604,9 @@
                             bevat</a>
                           </code>
                         </td>
-                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Raadgeving" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Raadgeving" data-placement="right">Raadgeving</a></td>
+                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-placement="right">Documentversie</a></td>
                         <td>0...*</td>
-                        <td property="rdfs:comment">Duidt aan dat een groter geheel uit meerdere onderdelen kan bestaan.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Procedurestap%3Adatum%20aangevraagd%20voor%20ministerraad" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#datumAangevraagdVoorMR">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#datumAangevraagdVoorMR" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#datumAangevraagdVoorMR" data-placement="right">
-                            datum aangevraagd voor ministerraad</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
-                        <td>0...1</td>
-                        <td property="rdfs:comment">De datum van de ministerraad waarop een dossier, dat zich in een welbepaalde procedurestap bevindt, is geagendeerd.</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier in een welbepaalde procedurestap een documentversie kan bevatten.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1289,9 +1632,51 @@
                             geeft aanleiding tot</a>
                           </code>
                         </td>
-                        <td><a href="http://data.vlaanderen.be/ns/besluit#Besluit" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Besluit" data-placement="right">Besluit</a></td>
-                        <td>0...*</td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Besluit" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Besluit" data-placement="right">Beslissing</a></td>
+                        <td>0...1</td>
                         <td property="rdfs:comment">Duidt aan dat een besluit als gevolg van een dossier in een welbepaalde procedurestap aangemaakt kan worden.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Procedurestap%3Ais%20aangevraagd%20voor" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#isAangevraagdVoor">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#isAangevraagdVoor" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#isAangevraagdVoor" data-placement="right">
+                            is aangevraagd voor</a>
+                          </code>
+                        </td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Zitting" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Zitting" data-placement="right">Zitting</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Duidt aan dat iemand heeft aangevraagd om een procedurestap op de agenda te plaatsen van een welbepaalde zitting.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Procedurestap%3Ais%20geagendeerd%20via" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#isGeagendeerdVia">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#isGeagendeerdVia" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#isGeagendeerdVia" data-placement="right">
+                            is geagendeerd via</a>
+                          </code>
+                        </td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-placement="right">Agendapunt</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een dossier in een welbepaalde procedurestap gebruikt wordt als informatiebron om een agendapunt te bespreken.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Procedurestap%3Ais%20gerelateerd%20aan" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
+                            is gerelateerd aan</a>
+                          </code>
+                        </td>
+                        <td><a href="http://dbpedia.org/ontology/UnitOfWork" data-toggle="tooltip" data-content="http://dbpedia.org/ontology/UnitOfWork" data-placement="right">Procedurestap</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een procedurestap gerelateerd kan zijn aan een andere procedurestap.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1317,7 +1702,7 @@
                             opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De opmerking gegeven bij een dossier in een welbepaalde procedurestap.</td>
                         <td property="vann:usageNote"></td>
@@ -1334,6 +1719,20 @@
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">De titel van een dossier in een welbepaalde procedurestap.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Procedurestap%3Avertrouwelijkheid" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#Resource">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#Resource" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Resource" data-placement="right">
+                            vertrouwelijkheid</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Vertrouwelijkheid</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De indicator die de mate van vertrouwelijkheid van een procedurestap aangeeft.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1356,6 +1755,8 @@
                       <a href="#Publicatie%3Aaantal%20woorden">aantal woorden</a>,
                       <a href="#Publicatie%3Abevat">bevat</a>,
                       <a href="#Publicatie%3Adigitaal">digitaal</a>,
+                      <a href="#Publicatie%3Aheeft%20aanvrager">heeft aanvrager</a>,
+                      <a href="#Publicatie%3Aheeft%20bevoegde">heeft bevoegde</a>,
                       <a href="#Publicatie%3Anummer">nummer</a>,
                       <a href="#Publicatie%3Aopmerking">opmerking</a>,
                       <a href="#Publicatie%3Aopschrift">opschrift</a>,
@@ -1423,10 +1824,38 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Publicatie%3Anummer" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#nummer">
+                      <tr id="Publicatie%3Aheeft%20aanvrager" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftAanvrager">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#nummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#nummer" data-placement="right">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftAanvrager" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftAanvrager" data-placement="right">
+                            heeft aanvrager</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">Duidt aan dat een publicatie een hoedanigheid als aanvrager heeft.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Publicatie%3Aheeft%20bevoegde" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#heeftBevoegde" data-placement="right">
+                            heeft bevoegde</a>
+                          </code>
+                        </td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
+                        <td>1...*</td>
+                        <td property="rdfs:comment">Duidt aan dat een publicatie één of meer agenten als bevoegden heeft.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Publicatie%3Anummer" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/adms#identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#identifier" data-placement="right">
                             nummer</a>
                           </code>
                         </td>
@@ -1444,7 +1873,7 @@
                             opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De opmerking gegeven bij een publicatie.</td>
                         <td property="vann:usageNote"></td>
@@ -1493,10 +1922,10 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Publicatie%3Auiterste%20publicatiedatum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#datumUiterstePublicatie">
+                      <tr id="Publicatie%3Auiterste%20publicatiedatum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#uiterstePublicatiedatum">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#datumUiterstePublicatie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#datumUiterstePublicatie" data-placement="right">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#uiterstePublicatiedatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#uiterstePublicatiedatum" data-placement="right">
                             uiterste publicatiedatum</a>
                           </code>
                         </td>
@@ -1542,155 +1971,16 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Publicatie%20in%20het%20Belgisch%20Staatsblad%3Awerknummer%20van%20het%20Belgisch%20Staatsblad" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#NUMAC">
+                      <tr id="Publicatie%20in%20het%20Belgisch%20Staatsblad%3Awerknummer%20van%20het%20Belgisch%20Staatsblad" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#NUMAC" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#NUMAC" data-placement="right">
+                            <a href="http://www.w3.org/ns/adms#identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#identifier" data-placement="right">
                             werknummer van het Belgisch Staatsblad</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">Het werknummer van een publicatie zoals het door het Belgisch Staatsblad is toegekend.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-
-            </div>
-
-            <div class="region region--no-space-top">
-              <h3 class="h3" id="Raadgeving"><a href="https://data.vlaanderen.be/ns/besluitvorming#Raadgeving" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Raadgeving" data-placement="right">Raadgeving</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Beschrijving</dt><dd>Input gegeven door een welbepaald orgaan met betrekking tot een dossier in een welbepaalde procedurestap.</dd>
-
-                    <dt>Eigenschappen</dt>
-
-                    <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Raadgeving%3Aaanvraag">aanvraag</a>,
-                      <a href="#Raadgeving%3Aleidt%20tot">leidt tot</a>,
-                      <a href="#Raadgeving%3Aorgaan">orgaan</a>,
-                      <a href="#Raadgeving%3Asamenvatting">samenvatting</a>,
-                      <a href="#Raadgeving%3Astatus">status</a>,
-                      <a href="#Raadgeving%3Atype">type</a>,
-                      <a href="#Raadgeving%3Auitkomst">uitkomst</a>.</dd>
-
-                  </dl>
-                </div>
-
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
-                        <th class="data-table__header-title--sortable">Verwacht Type</th>
-                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
-                        <th class="data-table__header-title--sortable">Beschrijving</th>
-                        <th class="data-table__header-title--sortable">Gebruik</th>
-                        <th class="data-table__header-title--sortable">Codelijst</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-
-                      <tr id="Raadgeving%3Aaanvraag" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#aanvraag">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#aanvraag" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#aanvraag" data-placement="right">
-                            aanvraag</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De tekstuele inhoud van een aanvraag tot raadgeving.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Aleidt%20tot" typeof="rdfs:Property" resource="http://www.w3.org/ns/prov#generated">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/prov#generated" data-toggle="tooltip" data-content="http://www.w3.org/ns/prov#generated" data-placement="right">
-                            leidt tot</a>
-                          </code>
-                        </td>
-                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Documentversie" data-placement="right">Documentversie</a></td>
-                        <td>0...*</td>
-                        <td property="rdfs:comment">Duidt aan dat een documentversie als gevolg van een raadgeving ontvangen kan worden.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Aorgaan" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#orgaan">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#orgaan" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#orgaan" data-placement="right">
-                            orgaan</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Het orgaan dat instaat voor het verstrekken van een raadgeving.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Asamenvatting" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#samenvatting">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#samenvatting" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#samenvatting" data-placement="right">
-                            samenvatting</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De korte tekst die een ontvangen raadgeving samenvat.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Astatus" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#status">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/adms#status" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#status" data-placement="right">
-                            status</a>
-                          </code>
-                        </td>
-                        <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Status" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Status" data-placement="right">Status</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De status waarin een raadgeving zich bevindt, bv. aangevraagd.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
-                            type</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Raadgevingstype</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Het type van een raadgeving, bv. advies, consultatie etc.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Raadgeving%3Auitkomst" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#uitkomst">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#uitkomst" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#uitkomst" data-placement="right">
-                            uitkomst</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Raadgevingsuitkomst</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">Het kernwoord dat de uitkomst van een raadgeving beschrijft.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1710,10 +2000,11 @@
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Vertalingsaanvraag%3Adatum%20van%20verwachte%20oplevering">datum van verwachte oplevering</a>,
                       <a href="#Vertalingsaanvraag%3Adoeltaal">doeltaal</a>,
                       <a href="#Vertalingsaanvraag%3Aleidt%20tot">leidt tot</a>,
-                      <a href="#Vertalingsaanvraag%3Astatus">status</a>.</dd>
+                      <a href="#Vertalingsaanvraag%3Aopmerking">opmerking</a>,
+                      <a href="#Vertalingsaanvraag%3Astatus">status</a>,
+                      <a href="#Vertalingsaanvraag%3Averwachte%20opleverdatum">verwachte opleverdatum</a>.</dd>
 
                   </dl>
                 </div>
@@ -1732,20 +2023,6 @@
                     </thead>
 
                     <tbody class="supertype">
-
-                      <tr id="Vertalingsaanvraag%3Adatum%20van%20verwachte%20oplevering" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#datumVerwachteOplevering">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/besluitvorming#datumVerwachteOplevering" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#datumVerwachteOplevering" data-placement="right">
-                            datum van verwachte oplevering</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">De datum waarop men verwacht een vertaling (ten laatste) te ontvangen.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
 
                       <tr id="Vertalingsaanvraag%3Adoeltaal" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#doeltaal">
                         <td>
@@ -1775,6 +2052,20 @@
                         <td></td>
                       </tr>
 
+                      <tr id="Vertalingsaanvraag%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een vertalingsaanvraag.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
                       <tr id="Vertalingsaanvraag%3Astatus" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#status">
                         <td>
                           <code property="rdfs:label">
@@ -1785,6 +2076,20 @@
                         <td><a href="https://data.vlaanderen.be/ns/besluitvorming#Status" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Status" data-placement="right">Status</a></td>
                         <td>1</td>
                         <td property="rdfs:comment">De status waarin een vertalingsaanvraag zich bevindt, bv. aangevraagd.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Vertalingsaanvraag%3Averwachte%20opleverdatum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum" data-placement="right">
+                            verwachte opleverdatum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De datum waarop men verwacht een vertaling (ten laatste) te ontvangen.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -1804,12 +2109,12 @@
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Zitting%3Abehandelt">behandelt</a>,
                       <a href="#Zitting%3Ageplande%20start">geplande start</a>,
                       <a href="#Zitting%3Agestart%20op%20tijdstip">gestart op tijdstip</a>,
                       <a href="#Zitting%3Age%C3%ABindigd%20op%20tijdstip">geëindigd op tijdstip</a>,
                       <a href="#Zitting%3Anummer">nummer</a>,
-                      <a href="#Zitting%3Aop%20locatie">op locatie</a>.</dd>
+                      <a href="#Zitting%3Aop%20locatie">op locatie</a>,
+                      <a href="#Zitting%3Aopmerking">opmerking</a>.</dd>
 
                   </dl>
                 </div>
@@ -1828,20 +2133,6 @@
                     </thead>
 
                     <tbody class="supertype">
-
-                      <tr id="Zitting%3Abehandelt" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#behandelt">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.vlaanderen.be/ns/besluit#behandelt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#behandelt" data-placement="right">
-                            behandelt</a>
-                          </code>
-                        </td>
-                        <td><a href="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Agendapunt" data-placement="right">Agendapunt</a></td>
-                        <td>0...*</td>
-                        <td property="rdfs:comment">Duidt aan dat een agendapunt tijdens een zitting behandeld is.</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
 
                       <tr id="Zitting%3Ageplande%20start" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/generiek#geplandeStart">
                         <td>
@@ -1885,10 +2176,10 @@
                         <td></td>
                       </tr>
 
-                      <tr id="Zitting%3Anummer" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/besluit#nummer">
+                      <tr id="Zitting%3Anummer" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.vlaanderen.be/ns/besluit#nummer" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#nummer" data-placement="right">
+                            <a href="http://www.w3.org/ns/adms#identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#identifier" data-placement="right">
                             nummer</a>
                           </code>
                         </td>
@@ -1913,6 +2204,20 @@
                         <td></td>
                       </tr>
 
+                      <tr id="Zitting%3Aopmerking" typeof="rdfs:Property" resource="http://www.w3.org/2000/01/rdf-schema#comment">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">
+                            opmerking</a>
+                          </code>
+                        </td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
+                        <td>0...*</td>
+                        <td property="rdfs:comment">De opmerking gegeven bij een zitting.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
                     </tbody>
                   </table>
                 </div>
@@ -1926,23 +2231,17 @@
             </div>
 
             <div class="region region--no-space-top">
-              <h3 class="h3" id="Contactpunt"><a href="http://schema.org/ContactPoint" data-toggle="tooltip" data-content="http://schema.org/ContactPoint" data-placement="right">Contactpunt</a></h3>
+              <h3 class="h3" id="Opmerking"><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd>TODO</dd>
+                    <dt>Beschrijving</dt><dd>Een opmerking gegeven bij een entiteit.</dd>
 
                     <dt>Eigenschappen</dt>
 
                     <dd>Voor dit datatype zijn de volgende eigenschappen gedefinieerd:
-                      <a href="#Contactpunt%3Aaanschrijfprefix">aanschrijfprefix</a>,
-                      <a href="#Contactpunt%3Aadres">adres</a>,
-                      <a href="#Contactpunt%3Aemail">email</a>,
-                      <a href="#Contactpunt%3Afax">fax</a>,
-                      <a href="#Contactpunt%3Anaam">naam</a>,
-                      <a href="#Contactpunt%3Aopeningsuren">openingsuren</a>,
-                      <a href="#Contactpunt%3Apagina">pagina</a>,
-                      <a href="#Contactpunt%3Atelefoon">telefoon</a>,
-                      <a href="#Contactpunt%3Auren%20beschikbaarheid">uren beschikbaarheid</a>.</dd>
+                      <a href="#Opmerking%3Aauteur">auteur</a>,
+                      <a href="#Opmerking%3AcreatieTimestamp">creatieTimestamp</a>,
+                      <a href="#Opmerking%3Aopmerking">opmerking</a>.</dd>
 
                   </dl>
                 </div>
@@ -1962,119 +2261,41 @@
 
                     <tbody class="supertype">
 
-                      <tr id="Contactpunt%3Aaanschrijfprefix" typeof="rdfs:Property" resource="http://www.w3.org/2006/vcard/ns#honorific-prefix">
+                      <tr id="Opmerking%3Aauteur" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/2006/vcard/ns#honorific-prefix" data-toggle="tooltip" data-content="http://www.w3.org/2006/vcard/ns#honorific-prefix" data-placement="right">aanschrijfprefix</a>
+                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">auteur</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">TaalString</a></td>
+                        <td><a href="http://purl.org/dc/terms/Agent" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Agent" data-placement="right">Agent</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">De agent door wie de opmerking is gegeven.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Contactpunt%3Aadres" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#address">
+                      <tr id="Opmerking%3AcreatieTimestamp" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#address" data-placement="right">adres</a>
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum" data-placement="right">creatieTimestamp</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Adresvoorstelling</a></td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">Het tijdstip waarop de opmerking is gegeven.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
 
-                      <tr id="Contactpunt%3Aemail" typeof="rdfs:Property" resource="http://schema.org/email">
+                      <tr id="Opmerking%3Aopmerking" typeof="rdfs:Property" resource="https://www.w3.org/2000/01/rdf-schema#comment">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://schema.org/email" data-toggle="tooltip" data-content="http://schema.org/email" data-placement="right">email</a>
+                            <a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">opmerking</a>
                           </code>
                         </td>
                         <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
                         <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Afax" typeof="rdfs:Property" resource="http://schema.org/faxNumber">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/faxNumber" data-toggle="tooltip" data-content="http://schema.org/faxNumber" data-placement="right">fax</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Anaam" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/name">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/0.1/name" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/name" data-placement="right">naam</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Aopeningsuren" typeof="rdfs:Property" resource="http://schema.org/openingHours">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/openingHours" data-toggle="tooltip" data-content="http://schema.org/openingHours" data-placement="right">openingsuren</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">GetypeerdeString</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Apagina" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/page">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/0.1/page" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/page" data-placement="right">pagina</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Atelefoon" typeof="rdfs:Property" resource="http://schema.org/telephone">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/telephone" data-toggle="tooltip" data-content="http://schema.org/telephone" data-placement="right">telefoon</a>
-                          </code>
-                        </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="vann:usageNote"></td>
-                        <td></td>
-                      </tr>
-
-                      <tr id="Contactpunt%3Auren%20beschikbaarheid" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right">uren beschikbaarheid</a>
-                          </code>
-                        </td>
-                        <td><a href="http://schema.org/OpeningHoursSpecification" data-toggle="tooltip" data-content="http://schema.org/OpeningHoursSpecification" data-placement="right">OpeningsurenSpecificatie</a></td>
-                        <td>1</td>
-                        <td property="rdfs:comment">TODO</td>
+                        <td property="rdfs:comment">De tekstuele inhoud van een opmerking.</td>
                         <td property="vann:usageNote"></td>
                         <td></td>
                       </tr>
@@ -2122,7 +2343,7 @@
                             <a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">opmerking</a>
                           </code>
                         </td>
-                        <td><a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a></td>
+                        <td><a href="https://www.w3.org/2000/01/rdf-schema#comment" data-toggle="tooltip" data-content="https://www.w3.org/2000/01/rdf-schema#comment" data-placement="right">Opmerking</a></td>
                         <td>0...*</td>
                         <td property="rdfs:comment">De opmerking gegeven bij een status.</td>
                         <td property="vann:usageNote"></td>
@@ -2161,11 +2382,73 @@
 
             </div>
 
+            <div class="region region--no-space-top">
+              <h3 class="h3" id="Verdaagd"><a href="https://data.vlaanderen.be/ns/besluitvorming#Verdaagd" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#Verdaagd" data-placement="right">Verdaagd</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>De indicator die aangeeft of een entiteit verdaagd is en eventueel naar wanneer.</dd>
+
+                    <dt>Eigenschappen</dt>
+
+                    <dd>Voor dit datatype zijn de volgende eigenschappen gedefinieerd:
+                      <a href="#Verdaagd%3Anieuwe%20datum">nieuwe datum</a>,
+                      <a href="#Verdaagd%3Averdaagd">verdaagd</a>.</dd>
+
+                  </dl>
+                </div>
+
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                        <th class="data-table__header-title--sortable">Verwacht Type</th>
+                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                        <th class="data-table__header-title--sortable">Beschrijving</th>
+                        <th class="data-table__header-title--sortable">Gebruik</th>
+                        <th class="data-table__header-title--sortable">Codelijst</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+
+                      <tr id="Verdaagd%3Anieuwe%20datum" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#nieuweDatum">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#nieuweDatum" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#nieuweDatum" data-placement="right">nieuwe datum</a>
+                          </code>
+                        </td>
+                        <td><a href="http://data.vlaanderen.be/ns/besluit#Zitting" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/besluit#Zitting" data-placement="right">Zitting</a></td>
+                        <td>0...1</td>
+                        <td property="rdfs:comment">De nieuwe datum waarnaar een entiteit verdaagd is.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                      <tr id="Verdaagd%3Averdaagd" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/besluitvorming#verdaagd">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.vlaanderen.be/ns/besluitvorming#verdaagd" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/besluitvorming#verdaagd" data-placement="right">verdaagd</a>
+                          </code>
+                        </td>
+                        <td><a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a></td>
+                        <td>1</td>
+                        <td property="rdfs:comment">De indicator die aangeeft of een entiteit verdaagd is.</td>
+                        <td property="vann:usageNote"></td>
+                        <td></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+
 
             <div class="region region--no-space-top" id="jsonld">
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">JSON-LD context</h2>
 
-                <p>Een herbruikbare JSON-LD context definitie voor dit applicatieprofiel is terug te vinden op: <a href="https://github.com/pwc-technology-be/besluitvorming-vr/blob/master/context/besluitvorming.jsonld" target="_blank">https://github.com/pwc-technology-be/besluitvorming-vr/blob/master/context/besluitvorming.jsonld</a></p>
+                <p>Een herbruikbare JSON-LD context definitie voor dit applicatieprofiel is terug te vinden op: <a href="http://data.vlaanderen.be/context/" target="_blank">http://data.vlaanderen.be/context/</a></p>
 
             </div>
           </div>
