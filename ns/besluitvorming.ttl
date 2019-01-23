@@ -43,6 +43,7 @@ skos:Concept a rdfs:Class ;
         "Statuswaarde"@nl,
         "Taal"@nl,
         "Thema"@nl,
+        "Versie"@nl,
         "Vertrouwelijkheid"@nl .
 
 <https://www.w3.org/2000/01/rdf-schema#comment> a rdf:Property,
@@ -81,8 +82,7 @@ dcterms:title a rdf:Property ;
         "titel"@nl .
 
 dcterms:type a rdf:Property ;
-    rdfs:label "type"@nl,
-        "type van procedurestap"@nl .
+    rdfs:label "type"@nl .
 
 rdfs:comment a rdf:Property ;
     rdfs:label "opmerking"@nl .
@@ -301,7 +301,14 @@ prov:generated a rdf:Property ;
     rdfs:comment "De indicator die de versie van een agenda aangeeft, bv. agenda A, agenda B, enzovoort."@nl ;
     rdfs:domain <https://data.vlaanderen.be/ns/besluitvorming#Agenda> ;
     rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-    rdfs:range <https://data.vlaanderen.be/ns/besluitvorming#Versie> .
+    rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/besluitvorming#vertrouwelijkheid> a owl:ObjectProperty ;
+    rdfs:label "vertrouwelijkheid"@nl ;
+    rdfs:comment "De indicator die de mate van vertrouwelijkheid van een entiteit aangeeft."@nl ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
+    rdfs:range skos:Concept .
 
 <https://data.vlaanderen.be/ns/besluitvorming#verwachteOpleverdatum> a owl:DatatypeProperty ;
     rdfs:label "verwachte opleverdatum"@nl ;
@@ -781,6 +788,56 @@ prov:generated a rdf:Property ;
     rdfs:comment "TODO"@nl ;
     rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
 
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/bis> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/decies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/novies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/octies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/quater> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/quinquies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/semel> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/septies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/sexies> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
+<https://data.vlaanderen.be/ns/besluitvorming/Versie/ter> a skos:Concept ;
+    rdfs:label "TODO"@nl ;
+    rdfs:comment "TODO"@nl ;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
+
 <https://data.vlaanderen.be/ns/besluitvorming/Vertrouwelijkheid/ministers,Kabinetchefs,Kabinetten,Departementen,VlaamsParlement,RekenhofEnPubliek> a skos:Concept ;
     rdfs:label "TODO"@nl ;
     rdfs:comment "TODO"@nl ;
@@ -829,59 +886,9 @@ dcterms:relation a rdf:Property ;
     rdfs:comment "De indicator die aangeeft of een entiteit verdaagd is en eventueel naar wanneer."@nl ;
     rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
 
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/bis> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/decies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/novies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/octies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/quater> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/quinquies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/semel> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/septies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/sexies> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-<https://data.vlaanderen.be/ns/besluitvorming/Versie/ter> a <https://data.vlaanderen.be/ns/besluitvorming#Versie> ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
 dcterms:created a rdf:Property ;
     rdfs:label "aanmaakdatum"@nl,
-        "timestamp van aanreiking"@nl .
+        "aanreikdatum"@nl .
 
 <https://data.vlaanderen.be/ns/besluitvorming#Documentversie> a owl:Class ;
     rdfs:label "Documentversie"@nl ;
@@ -907,15 +914,6 @@ dcterms:created a rdf:Property ;
     rdfs:label "Agenda"@nl ;
     rdfs:comment "Agenda die besproken wordt tijdens een zitting."@nl ;
     rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> .
-
-rdfs:Resource a rdf:Property ;
-    rdfs:label "vertrouwelijkheid"@nl .
-
-<https://data.vlaanderen.be/ns/besluitvorming#Versie> a owl:Class ;
-    rdfs:label "TODO"@nl ;
-    rdfs:comment "TODO"@nl ;
-    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/besluitvorming> ;
-    owl:oneOf ( <https://data.vlaanderen.be/ns/besluitvorming/Versie/semel> <https://data.vlaanderen.be/ns/besluitvorming/Versie/bis> <https://data.vlaanderen.be/ns/besluitvorming/Versie/ter> <https://data.vlaanderen.be/ns/besluitvorming/Versie/quater> <https://data.vlaanderen.be/ns/besluitvorming/Versie/quinquies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/sexies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/septies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/octies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/novies> <https://data.vlaanderen.be/ns/besluitvorming/Versie/decies> ) .
 
 <https://data.vlaanderen.be/ns/besluitvorming> a owl:Ontology ;
     rdfs:label "Besluitvorming"@nl ;
