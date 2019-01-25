@@ -17,10 +17,6 @@
 		"Vertalingsaanvraag":"https://data.vlaanderen.be/ns/besluitvorming#Vertalingsaanvraag",
 		"Zitting":"http://data.vlaanderen.be/ns/besluit#Zitting",
 
-		"Agenda.versie":{
-			"@id":"https://data.vlaanderen.be/ns/besluitvorming#versie",
-			"@type":"http://www.w3.org/2004/02/skos/core#Concept"
-		},
 		"Document.vertrouwelijkheid":{
 			"@id":"https://data.vlaanderen.be/ns/generiek#vertrouwelijkheid",
 			"@type":"http://www.w3.org/2004/02/skos/core#Concept"
@@ -109,10 +105,6 @@
 			"@id":"https://data.vlaanderen.be/ns/generiek#gearchiveerd",
 			"@type":"http://www.w3.org/2001/XMLSchema#boolean"
 		},
-		"geeftAanleidingTot":{
-			"@id":"http://www.w3.org/ns/prov#generated",
-			"@type":"http://data.vlaanderen.be/ns/besluit#Besluit"
-		},
 		"geplandeStart":{
 			"@id":"https://data.vlaanderen.be/ns/generiek#geplandeStart",
 			"@type":"http://www.w3.org/2001/XMLSchema#dateTime"
@@ -185,7 +177,7 @@
 		},
 		"isGerelateerdAan":{
 			"@id":"http://purl.org/dc/terms/relation",
-			"@type":"http://dbpedia.org/ontology/UnitOfWork",
+			"@type":"http://dbpedia.org/ontology/Case",
 			"@container":"@set"
 		},
 		"isGesteldAan":{
@@ -200,6 +192,10 @@
 		"korteTitel":{
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#korteTitel",
 			"@type":"http://www.w3.org/2001/XMLSchema#string"
+		},
+		"leidtTot":{
+			"@id":"http://www.w3.org/ns/prov#generated",
+			"@type":"https://data.vlaanderen.be/ns/besluitvorming#Consultatie-antwoord"
 		},
 		"locatie":{
 			"@id":"http://www.w3.org/ns/prov#atLocation",
@@ -255,10 +251,6 @@
 			"@id":"https://data.vlaanderen.be/ns/melding#statusdatum",
 			"@type":"http://www.w3.org/2001/XMLSchema#dateTime"
 		},
-		"statuswaarde":{
-			"@id":"https://data.vlaanderen.be/ns/melding#statuswaarde",
-			"@type":"http://www.w3.org/2004/02/skos/core#Concept"
-		},
 		"stuknummerVP":{
 			"@id":"https://data.vlaanderen.be/ns/generiek#stuknummerVP",
 			"@type":"http://www.w3.org/2001/XMLSchema#string"
@@ -303,7 +295,7 @@
 		},
 		"versie":{
 			"@id":"https://data.vlaanderen.be/ns/generiek#versieIdentificator",
-			"@type":"http://www.w3.org/2001/XMLSchema#string"
+			"@type":"http://www.w3.org/2004/02/skos/core#Concept"
 		},
 		"vertrouwelijkheid":{
 			"@id":"https://data.vlaanderen.be/ns/besluitvorming#vertrouwelijkheid",
